@@ -10,3 +10,4 @@ Gameplay Mechanics
 
 The game operates via a console-based interface where players input numeric choices to navigate dialogue, make critical story decisions, and execute combat maneuvers. Success relies on balancing resource management with tactical skill usage tailored to your chosen class archetype.
 
+<img src="https://github.com/user-attachments/assets/973c4211-d49a-4aac-af17-612c9a6caf7b" />
