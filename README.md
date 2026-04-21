@@ -6,3 +6,7 @@ Salaming Lihim is a text-based Java RPG that brings the rich tapestry of Philipp
 
 When the Babaylans attempt to bring Biringan to its knees, a new hero must rise from the ashes. Journey through the treacherous Dark Forest, survive the rotting, undead wastes of Mogul, and navigate the deceptive paradise of Mt. Kanatuan to uncover the true mastermind behind the impending war.
 
+Gameplay Mechanics
+
+The game operates via a console-based interface where players input numeric choices to navigate dialogue, make critical story decisions, and execute combat maneuvers. Success relies on balancing resource management with tactical skill usage tailored to your chosen class archetype.
+
