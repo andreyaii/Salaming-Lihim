@@ -1,5 +1,14 @@
 # Salaming-Lihim
 
+Welcome to Biringan City
+
+Salaming Lihim is a text-based Java RPG rooted in Philippine mythology. Players navigate a hidden, glittering metropolis caught in a conspiracy between the Babaylans and mythical creatures.
+
+The Journey: Travel from the Dark Forest to the undead wastes of Mogul and the deceptive peaks of Mt. Kanatuan.
+
+The Goal: Uncover the mastermind and stop the impending war.
+
+
 Project Overview
 
 Salaming Lihim is a text-based Java RPG that brings the rich tapestry of Philippine mythology to life. Set against the backdrop of Biringan City—a glittering, hidden metropolis where mythical creatures coexist in fragile peace—the game thrusts players into a sprawling adventure of betrayal, dark magic, and an insidious conspiracy that threatens the balance between the mortal and mystical realms.
@@ -13,3 +22,4 @@ The game operates via a console-based interface where players input numeric choi
 <img src="https://github.com/user-attachments/assets/174967db-c99c-488c-b053-863aef8857fc" />
 
 <img src="https://github.com/user-attachments/assets/d1952b31-410e-4791-80c8-5d1c6fceffd5" />
+
