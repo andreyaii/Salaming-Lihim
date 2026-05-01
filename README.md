@@ -12,7 +12,13 @@ The game operates via a console-based interface where players input numeric choi
 
 Play as iconic creatures from Philippine folklore and navigate a morally complex world where your decisions matter. Meaningful dialogue choices and sacrifices directly impact your resources, stats, and narrative progression. Manage your HP and Mana as you battle a menagerie of terrifying foes, including Tiyanaks, Bungisngis, and Aswangs. Unlock devastating new abilities like Moonstrike by discovering legendary artifacts.
 
+###  Use Case Diagram
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/174967db-c99c-488c-b053-863aef8857fc" width="45%" />
-  <img src="https://github.com/user-attachments/assets/d1952b31-410e-4791-80c8-5d1c6fceffd5" width="45%" />
+  <img src="https://github.com/user-attachments/assets/174967db-c99c-488c-b053-863aef8857fc" width="100%" alt="Game System Diagram" />
+</p>
+---
+
+###  Class Diagram
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d1952b31-410e-4791-80c8-5d1c6fceffd5" width="100%" alt="Character and Enemy System UML" />
 </p>
