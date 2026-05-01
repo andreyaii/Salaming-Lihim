@@ -1,0 +1,4 @@
+package Races
+
+class Kapre {
+}
