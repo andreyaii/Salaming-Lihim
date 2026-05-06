@@ -17,7 +17,7 @@ public class Enemy {
     public boolean isAlive() {
         return hp > 0;
     }
-
+    
     public int dealDamage(PlayerCharacter target) {
         System.out.println(name + " " + type.attackDescription + "!");
         int rawDamage = new Random().nextInt(type.maxDamage - type.minDamage + 1) + type.minDamage;
