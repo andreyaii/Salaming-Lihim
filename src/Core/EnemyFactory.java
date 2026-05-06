@@ -15,4 +15,13 @@ public class EnemyFactory {
         return enemies;
     }
 
+    public static List<Enemy> spawnBosses(EnemyType type, int count) {
+        List<Enemy> bosses = new ArrayList<>();
+        for (int i = 1; i <= count; i++) {
+            String name = "Boss " + type.typeName + " " + i;
+            int hp = 100 + new Random().nextInt(50);
+            bosses.add(new Enemy(name, type, hp));
+        }
+        return bosses;
+    }
 }
