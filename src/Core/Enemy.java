@@ -1,5 +1,4 @@
 package Core;
-import java.util.Random;
 
 public class Enemy {
 
@@ -18,8 +17,4 @@ public class Enemy {
         return hp > 0;
     }
 
-    public int dealDamage(PlayerCharacter target) {
-        //to be implemented
-        return 0;
-    }
 }
