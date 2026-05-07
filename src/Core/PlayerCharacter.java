@@ -61,4 +61,24 @@ public class PlayerCharacter {
 
     public boolean isAlive;
     public void setAlive(boolean alive) { this.isAlive = alive; }
+
+    public void useItem(Item item) {
+        switch (item.getName()) {
+
+            case "Health Potion":
+                setHp(maxHp);
+                inventory.remove(item);
+                System.out.println("\n🧪 You used a Health Potion -- the elixir of life! HP fully restored.\n");
+                break;
+
+            case "Mana Potion":
+                mana = maxMana;
+                inventory.remove(item);
+                System.out.println("\n🔮 You used a Mana Potion -- the elixir of power! Mana fully restored.\n");
+                break;
+
+            default:
+                System.out.println("\n❌ You can't use this item.\n");
+        }
+    }
 }
