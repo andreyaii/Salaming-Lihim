@@ -1,6 +1,7 @@
 package Core;
 
 public enum EnemyType {
+
     DUWENDE("Duwende", 6, 15, "throws a tiny rock"),
     TIYANAK("Tiyanak", 7, 16, "bites viciously"),
     BUNGISNGIS("Bungisngis", 12, 32, "swings a large tree branch"),

@@ -12,5 +12,6 @@ public class Main {
         W1Mission2.mission2(player);
         W1Mission3.mission3(player);
         Intro2.intro2();
+        W2Mission1.mission1(player);
     }
 }
