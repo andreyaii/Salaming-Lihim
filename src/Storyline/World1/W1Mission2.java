@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class W1Mission2 {
     public static boolean helpedBeggar = false;
 
-    public static void w1mission2(PlayerCharacter player) {
+    public static void mission2(PlayerCharacter player) {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("            ===================================================================================================================================");

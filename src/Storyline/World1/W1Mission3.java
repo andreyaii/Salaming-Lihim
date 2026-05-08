@@ -1,4 +1,63 @@
 package Storyline.World1;
 
+import Core.*;
+import Storyline.DialogueUtils;
+
+import java.util.Scanner;
+
 public class W1Mission3 {
+    public static boolean mission3(PlayerCharacter player) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println();
+        System.out.println("          ==========================================================================================================================================");
+        System.out.println("          ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀▀█░░░░░░░▀█▀░█░█░█▀▀░░░█░█░█▀▀░█▀█░█▀▄░▀█▀░░░█▀█░█▀▀░░░█▀▄░█▀█░█▀▄░█░█░█▀█░█▀▀░█▀▀░█▀▀░░░░▄▀░░▄▀\n"
+                + "          ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░▀▄░░▀░░░░░█░░█▀█░█▀▀░░░█▀█░█▀▀░█▀█░█▀▄░░█░░░░█░█░█▀▀░░░█░█░█▀█░█▀▄░█▀▄░█░█░█▀▀░▀▀█░▀▀█░░░▀▄░░▀▄\n"
+                + "          ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀░░░▀░░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░░░▀▀▀░▀░░░░░▀▀░░▀░▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░░░▀░░░▀");
+        System.out.println("          ==========================================================================================================================================");
+
+        scan.nextLine();
+
+        System.out.println("Enlightened with the clues from the Information Guild, you hurry to the Dark Forest. Soon, you hear stomping and the sound of creaky wagon wheels turning through the soil.");
+        DialogueUtils.pause();
+        System.out.println("There you see tiyanaks moving the wagon full of unconscious bodies of enkantos and diwatas.");
+        System.out.println("They are led by the giant entity, the Bungisngis.");
+        System.out.println("You move towards the group quietly, hiding behind the bodies of trees, and observe what they might do.");
+        DialogueUtils.pause();
+        System.out.println();
+        System.out.println("The Bungisngis smiles wide and turns its eyes upon the bodies of the diwatas.");
+        System.out.println("You watch in nervous anticipation as the Bungisngis walks towards the wagon,");
+        System.out.println("and ready yourself with your weapon as the giant reaches out to the wagon and raises the limp body of a diwata.");
+        System.out.println("The Bungisngis opens its mouth, salivating at the sight of its meal.");
+        DialogueUtils.pause();
+        System.out.println("Just then, a whirl of wind slices the skin of the giant’s arm, causing it to drop the unconscious diwata back on the wagon.");
+        System.out.println("Another diwata, the one who summoned the wind, rises, and you step out of hiding and move yourself between the wagon and the group of enemies.");
+        scan.nextLine();
+        System.out.println("Conscious Diwata: Are you here to rescue us?");
+        scan.nextLine();
+        System.out.println(player.name + ": I am. Wake the others up and head to the city! I’ll stop them.");
+        scan.nextLine();
+        System.out.println("Conscious Diwata: Alright!");
+        scan.nextLine();
+        System.out.println("[You encountered 3 tiyanaks and a Bungisngis.]\n\n{Only tiyanaks can be targeted}\n{Mini boss can only be targeted after wiping out the henchmen}\n");
+        DialogueUtils.pause();
+
+        // battle to implement
+
+        player.resetCooldowns();
+
+        scan.nextLine();
+        System.out.println("The Bungisngis, no longer smiling, throws soil at both of you, effectively " +
+                "blocking your vision. It takes this chance to grab Andrea and run towards Mogul.");
+        scan.nextLine();
+        System.out.println("Andrea: Help!");
+        scan.nextLine();
+        System.out.println(player.name + ": Andrea!");
+        scan.nextLine();
+        System.out.println("Without a second thought, you rush towards Mogul.");
+        scan.nextLine();
+        System.out.println("[You have entered Mogul, the land of the Aswangs]");
+        DialogueUtils.pause();
+
+        return true;
+    }
 }

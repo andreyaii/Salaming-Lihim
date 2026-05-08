@@ -1,11 +1,15 @@
 package Storyline.World1;
 
 import Storyline.DialogueUtils;
+import Core.PlayerCharacter;
 
 
 public class Intro1 {
-    public static void intro1() {
-        //playerCharacter not implemented yet
+    public static void intro1(PlayerCharacter player) {
+
+        System.out.println("                          With the hero's instincts as a " + player.race +
+                ", he/she starts to find clues in the heart of Biringan City.\n                                " +
+                player.name + " is taking the first step to the battle that will determine the fate of their kind.");
 
         System.out.println();
         System.out.print("      +================================================================================================================================================+\n");
