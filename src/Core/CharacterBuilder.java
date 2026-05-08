@@ -1,5 +1,8 @@
 package Core;
 
+import Races.Kapre;
+import Races.Tikbalang;
+
 public class CharacterBuilder {
     public static PlayerCharacter build(String name, int raceChoice) {
         Race race = null;
