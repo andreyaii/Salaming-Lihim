@@ -1,6 +1,18 @@
 package Core;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public abstract class Race {
+
+    //Selecting Race Options
+    public static Map<Integer, String> getAvailableRaces() {
+        Map<Integer, String> races = new LinkedHashMap<>();
+        races.put(1, "Tikbalang");
+        races.put(2, "Kapre");
+        return races;
+    }
+
     public abstract String getRaceName();
     public abstract int getBaseHp();
     public abstract int getBaseMana();
