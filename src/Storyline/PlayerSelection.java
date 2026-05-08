@@ -20,7 +20,7 @@ public class PlayerSelection {
         System.out.println("                   A kapre is a towering, tree-dwelling mythical creature. It is a tall, hairy, and muscular giant with dark skin and" +
                 "\n               a strong smell, who enjoys smoking large cigars and getting drunk. Often portrayed as playful tricksters, they are known for " +
                 "\n                 playing harmless pranks on people and causing them to get lost. Beware, though, for they can become dangerous if angered.\n");
-
+/*
         while (true) {
             try {
                 System.out.println("                                                         ╔═════════════════════════════════════╗");
@@ -43,7 +43,7 @@ public class PlayerSelection {
             } catch (Exception e) {
                 System.out.println("                                                 ❌ Invalid race choice. Please enter a valid number.\n");
             }
-        }
+        } */
 
         // Name input
         while (true) {

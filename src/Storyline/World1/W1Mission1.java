@@ -5,7 +5,7 @@ import Storyline.DialogueUtils;
 
 import java.util.Scanner;
 
-public class Mission1 {
+public class W1Mission1 {
     public static void mission1(PlayerCharacter player) {
         Scanner scan = new Scanner(System.in);
 

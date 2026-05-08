@@ -1,4 +1,4 @@
 package Storyline.World1;
 
-public class Mission3 {
+public class W1Mission3 {
 }
