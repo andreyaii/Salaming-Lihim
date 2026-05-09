@@ -1,6 +1,8 @@
 package Storyline;
 
 import Core.*;
+import Display.RaceArt;
+
 import java.util.*;
 
 public class PlayerSelection {
@@ -11,15 +13,27 @@ public class PlayerSelection {
         String name = "";
 
         // Race selection
-        System.out.println("\n                                                         ▌║█║▌│║▌│║▌║▌█║ 𝐓𝐢𝐤𝐛𝐚𝐥𝐚𝐧𝐠 ▌│║▌║▌│║║▌█║▌║█");
-        System.out.println("                   A tikbalang is a mythical, half-human, half-horse creature, known for its horse-like head and hooves, long limbs," +
-                "\n                 and gifted with the ability to lead travelers astray in forests and mountains. Though often portrayed as a deceptive" +
-                "\n                                        prankster or trickster, it can also be seen as a guardian of nature.\n");
+        RaceArt.displayTikbalang();
+        System.out.println("\n\u001B[36m                                                                   ▌║█║▌│║▌│║▌║▌█║ 𝐓𝐢𝐤𝐛𝐚𝐥𝐚𝐧𝐠 ▌│║▌║▌│║║▌█║▌║█\u001B[0m");
+        System.out.println();
+        System.out.print("\u001B[33m");
+        System.out.println("                             A tikbalang is a mythical, half-human, half-horse creature, known for its horse-like head and hooves, long limbs," +
+                "\n                           and gifted with the ability to lead travelers astray in forests and mountains. Though often portrayed as a deceptive" +
+                "\n                                                  prankster or trickster, it can also be seen as a guardian of nature.\n");
+        System.out.print("\u001B[0m");
 
-        System.out.println("\n                                                          ▌║█║▌│║▌│║▌║▌█║ 𝐊𝐚𝐩𝐫𝐞 ▌│║▌║▌│║║▌█║▌║█");
-        System.out.println("                   A kapre is a towering, tree-dwelling mythical creature. It is a tall, hairy, and muscular giant with dark skin and" +
-                "\n               a strong smell, who enjoys smoking large cigars and getting drunk. Often portrayed as playful tricksters, they are known for " +
-                "\n                 playing harmless pranks on people and causing them to get lost. Beware, though, for they can become dangerous if angered.\n");
+        DialogueUtils.pause();
+        RaceArt.displayKapre();
+        System.out.println("\n\u001B[32m                                                                   ▌║█║▌│║▌│║▌║▌█║ 𝐊𝐚𝐩𝐫𝐞 ▌│║▌║▌│║║▌█║▌║█\u001B[0m");
+        System.out.println();
+        System.out.print("\u001B[33m");
+        System.out.println("                             A kapre is a towering, tree-dwelling mythical creature. It is a tall, hairy, and muscular giant with dark skin and" +
+                "\n                         a strong smell, who enjoys smoking large cigars and getting drunk. Often portrayed as playful tricksters, they are known for " +
+                "\n                           playing harmless pranks on people and causing them to get lost. Beware, though, for they can become dangerous if angered.\n");
+        System.out.print("\u001B[0m");
+
+        scanner.nextLine();
+        DialogueUtils.pause();
 
         while (true) {
             try {

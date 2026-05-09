@@ -26,4 +26,7 @@ public abstract class Race {
 
     public int getSkillCooldown()   { return 2; }
     public int getSpecialCooldown() { return 3; }
+
+    // --art --
+    public abstract void displayArt();
 }

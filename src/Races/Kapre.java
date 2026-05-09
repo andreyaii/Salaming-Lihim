@@ -2,6 +2,8 @@ package Races;
 
 import Core.Race;
 import Core.Enemy;
+import Display.RaceArt;
+
 import java.util.Random;
 
 public class Kapre extends Race {
@@ -53,4 +55,10 @@ public class Kapre extends Race {
     public int getSkillManaCost() { return 20; }
     public int getSpecialManaCost() { return 40; }
     public void increaseSpecialDamage(int amount) { this.heatPowerBonus += amount; }
+
+    //art
+    @Override
+    public void displayArt() {
+        RaceArt.displayKapre();
+    }
 }

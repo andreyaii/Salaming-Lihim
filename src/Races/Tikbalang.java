@@ -2,6 +2,8 @@ package Races;
 
 import Core.Race;
 import Core.Enemy;
+import Display.RaceArt;
+
 import java.util.Random;
 
 public class Tikbalang extends Race {
@@ -55,5 +57,11 @@ public class Tikbalang extends Race {
     public int getSpecialManaCost() { return 40; }
     public void increaseSpecialDamage(int amount) {
         this.specialBonusDamage += amount;
+    }
+
+    //art
+    @Override
+    public void displayArt() {
+        RaceArt.displayKapre();
     }
 }
