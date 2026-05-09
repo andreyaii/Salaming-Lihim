@@ -28,7 +28,7 @@ public class Shop {
             for (int i = 0; i < items.size(); i++) {
                 System.out.println("                                                  [" + (i + 1) + "] " + items.get(i));
             }
-            System.out.println("                                                  Exit Shop");
+            System.out.println("                                                  [0] Exit Shop");
             System.out.print("                                                                  Enter choice: ");
             int choice;
             try {

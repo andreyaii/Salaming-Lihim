@@ -23,7 +23,13 @@ public class W2Mission1 {
                 "You see Andrea heavily injured on the ground, the Bungisngis limping towards her. You rush in to protect her.\n");
         DialogueUtils.pause();
 
-        //battle to implement
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.BUNGISNGIS2, 1);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 2, false);
+
+        if (!survived) {
+            return false;
+        }
 
         player.resetCooldowns();
 
