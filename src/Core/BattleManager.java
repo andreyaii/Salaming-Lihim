@@ -1,24 +1,45 @@
 package Core;
+
 import java.util.*;
 import Storyline.BeggarEvent;
 
 public class BattleManager {
     Scanner scanner = new Scanner(System.in);
 
-    public boolean startBattle(PlayerCharacter player, List<Enemy> enemies, int currentWorld, boolean isBossBattle) {
+    // ── NEW: HP/Mana bar generator ────────────────
+    private String bar(int current, int max, String fillChar, String emptyChar) {
+        int length = 20;
+        int filled = max > 0 ? (int) ((double) current / max * length) : 0;
+        StringBuilder b = new StringBuilder("[");
+        for (int i = 0; i < length; i++) {
+            b.append(i < filled ? fillChar : emptyChar);
+        }
+        b.append("] ").append(current).append("/").append(max);
+        return b.toString();
+    }
+    // ─────────────────────────────────────────────
 
+    public boolean startBattle(PlayerCharacter player, List<Enemy> enemies, int currentWorld, boolean isBossBattle) {
         System.out.println("                                                      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
         System.out.println("                                                      █              ⚔ ️ Battle Begins!             █");
         System.out.println("                                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
         while (player.isAlive() && !enemies.isEmpty()) {
+
+            // ── UPDATED: status display with bars ────
             System.out.println("\n                                                       ┏━PLAYER STATUS───────────────────────────━┓");
-            System.out.println("                                                            >> 🧍 Your HP: " + player.getHp() + " | Mana: " + player.getMana() +" <<");;
+            System.out.println("                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░"));
+            System.out.println("                                                         Mana " + bar(player.getMana(), player.maxMana, "▓", "░"));
             System.out.println("                                                       ┗━────────────────────────────────────────━┛");
+            // ─────────────────────────────────────────
+
             System.out.println("\n👹 ENEMIES");
             for (int i = 0; i < enemies.size(); i++) {
                 Enemy e = enemies.get(i);
-                System.out.printf("[%d] %s - HP: %d\n", i, e.name, e.hp);
+                // ── UPDATED: enemy also shows HP bar ─
+                System.out.printf("[%d] %s  HP %s\n", i, e.name,
+                        bar(e.hp, 150, "█", "░")); // 150 = max boss hp approx
+                // ─────────────────────────────────────
             }
 
             int targetIndex;
@@ -40,8 +61,8 @@ public class BattleManager {
                     scanner.nextLine();
                 }
             }
-            Enemy target = enemies.get(targetIndex);
 
+            Enemy target = enemies.get(targetIndex);
             int action = 0;
             boolean validInput = false;
 
@@ -57,7 +78,6 @@ public class BattleManager {
                     action = scanner.nextInt();
                     scanner.nextLine();
                     System.out.println();
-
                     if (action < 1 || action > 4) {
                         System.out.println("❌ Invalid choice. Please enter a number between 1 and 4.");
                     } else {
@@ -69,52 +89,33 @@ public class BattleManager {
                 }
             }
 
-            if (action == 1) {
-                player.dealDamage(target);
-            } else if (action == 2) {
-                player.useSkill(target);
-            } else if (action == 3){
-                player.useSpecial(target);
-            } else {
-                InventoryMenu.open(player);
-            }
+            if (action == 1)      player.dealDamage(target);
+            else if (action == 2) player.useSkill(target);
+            else if (action == 3) player.useSpecial(target);
+            else                  InventoryMenu.open(player);
 
             if (!target.isAlive()) {
                 System.out.println("💀 " + target.name + " is defeated!\n");
                 enemies.remove(targetIndex);
             }
 
-
             for (Enemy enemy : enemies) {
-                if (enemy.isAlive()) {
-                    enemy.dealDamage(player);
-                }
+                if (enemy.isAlive()) enemy.dealDamage(player);
             }
 
             player.reduceCooldowns();
-            if (!enemies.isEmpty()) {
-                player.regenerateMana();
-            }
+            if (!enemies.isEmpty()) player.regenerateMana();
 
             if (!player.isAlive()) {
                 System.out.println("💀 You were defeated...");
-
-                // Attempt to trigger Sir Khai rescue
                 int rescueType = BeggarEvent.trigger(player, currentWorld);
-
-                if (rescueType == 1) {
-                    System.out.println("\n✨ Sir Khai has saved you for the first time!");
-                }
-                if (rescueType == 2) {
-                    System.out.println("\n✨ Sir Khai drags your unconscious body to safety again!!");
-                }
-
+                if (rescueType == 1) System.out.println("\n✨ Sir Khai has saved you for the first time!");
+                if (rescueType == 2) System.out.println("\n✨ Sir Khai drags your unconscious body to safety again!!");
                 if (rescueType == 0) {
                     System.out.println("\n☠️ Your journey ends here...");
                     System.out.println("🔚 Game Over");
                     return false;
                 }
-
                 continue;
             }
         }

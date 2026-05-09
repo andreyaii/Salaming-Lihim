@@ -39,9 +39,11 @@ public class PlayerCharacter {
         return level;
     }
 
+
     public boolean isAlive() {
         return hp > 0;
     }
+
 
     public void dealDamage(Enemy target) {
         System.out.println(name + " " + raceType.getAttackDesc());
@@ -179,9 +181,10 @@ public class PlayerCharacter {
         if (hp > maxHp) hp = maxHp;
     }
 
+
     public boolean isAlive;
     public void setAlive(boolean alive) {
-        this.isAlive = alive;
+        //this.isAlive = alive;   (NOT USED - LEAVE IT EMPTY)
     }
     // ----- Barya -----
 

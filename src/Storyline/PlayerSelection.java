@@ -31,7 +31,7 @@ public class PlayerSelection {
                 System.out.println("                                                         ║ Kapre       → HP 185 | Mana 155     ║");
                 System.out.println("                                                         ╚═════════════════════════════════════╝");
                 System.out.println("                                                                  Choose your race:");
-                Map<Integer, String> races = Race.getAvailableRaces();
+                Map<Integer, String> races =    Race.getAvailableRaces();
                 for (Map.Entry<Integer, String> entry : races.entrySet()) {
                     System.out.printf("                                                                  [%d] %s\n", entry.getKey(), entry.getValue());
                 }
