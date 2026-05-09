@@ -3,6 +3,7 @@ package Storyline.World1;
 import Core.*;
 import Storyline.DialogueUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class W1Mission3 {
@@ -41,7 +42,26 @@ public class W1Mission3 {
         System.out.println("[You encountered 3 tiyanaks and a Bungisngis.]\n\n{Only tiyanaks can be targeted}\n{Mini boss can only be targeted after wiping out the henchmen}\n");
         DialogueUtils.pause();
 
-        // battle to implement
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIYANAK, 3);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.BUNGISNGIS, 1);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 1, false);
+
+        if (!survived) {
+            return false;
+        }
+
+        scan.nextLine();
+        System.out.println("Conscious Diwata: I’ve woken them all up. They’re escaping towards the city now. I’ll help you fight the Bungisngis. I’m Andrea, you are?");
+        scan.nextLine();
+        System.out.println(player.name + ": I'm " + player.name + ", let’s take this laughing monster down, Andrea.");
+        scan.nextLine();
+
+        survived = battle.startBattle(player, enemies2, 1, false);
+
+        if (!survived) {
+            return false;
+        }
 
         player.resetCooldowns();
 
