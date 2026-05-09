@@ -1,8 +1,9 @@
 package Storyline.World1;
 
-import Core.PlayerCharacter;
+import Core.*;
 import Storyline.DialogueUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class W1Mission1 {
@@ -26,7 +27,11 @@ public class W1Mission1 {
         System.out.println();
         DialogueUtils.pause();
 
-        //fight not implemented yet
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.DUWENDE, 3);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 1, false);
+        scan.nextLine();
+        player.resetCooldowns();
 
         System.out.println("\n\nSean: Thank you so much. I owe you my livelihood. Tell me, what would you like in return?");
         scan.nextLine();
