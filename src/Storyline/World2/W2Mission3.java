@@ -3,6 +3,7 @@ package Storyline.World2;
 import Core.*;
 import Storyline.DialogueUtils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class W2Mission3 {
@@ -42,7 +43,15 @@ public class W2Mission3 {
         System.out.println();
         DialogueUtils.pause();
 
-        //battle not yet implemented
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.SIGBIN, 3);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+
+        player.resetCooldowns();
         sc.nextLine();
 
         System.out.println("Once the battle is won, the Pandai approaches you, impressed.");
