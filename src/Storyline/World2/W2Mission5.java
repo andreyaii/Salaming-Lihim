@@ -57,7 +57,36 @@ public class W2Mission5 {
         System.out.println("[You encountered 6 henchmen of Tria. 2 Tiktiks, 2 Abwak, 2 Aswang. Choose a target and an attack]\n{Boss cannot be chosen until henchmen are wiped out}\n");
         DialogueUtils.pause();
 
-        //battle not yet implemented
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIKTIK, 2);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.ABWAK, 2);
+        List<Enemy> enemies3 = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
+        List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.TRIA, 1);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 2, false);
+        if (!survived) {
+            return false;
+        }
+
+        survived = battle.startBattle(player, enemies2, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+        survived = battle.startBattle(player, enemies3, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+
+        System.out.println("Hah! You're quite capable. But you do not hold even a candle to my strength.");
+        sc.nextLine();
+        System.out.println("[You are facing Tria, the Master of Mogul. Choose an attack]");
+        survived = battle.startBattle(player, bosses, 2, true);
+        if (!survived) {
+            return false;
+        }
+
+        player.resetCooldowns();
         sc.nextLine();
 
 
