@@ -20,7 +20,14 @@ public class W3Mission2 {
         sc.nextLine();
 
         System.out.println("[You encountered 2 Babaylan Sentinels. Please choose a target and an attack.]");
-        //battle not implemented yet
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS2, 2);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 3, false);
+        if (!survived) {
+            return false;
+        }
+
+        player.resetCooldowns();
         sc.nextLine();
 
         System.out.println("When the last guardian falls, silence returns, broken only by the faint hum of the Blade.");
