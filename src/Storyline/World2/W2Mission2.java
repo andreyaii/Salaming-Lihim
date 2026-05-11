@@ -46,7 +46,15 @@ public class W2Mission2 {
         System.out.println("The Aswang snarls, wings unfurling with a crack of sinew. It takes to the sky and the shadows unnaturally bend around its sinister form.");
         DialogueUtils.pause();
 
-        //battle not yet implemented
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+
+        player.resetCooldowns();
         scan.nextLine();
 
         System.out.println("With one final strike, you drive the creature back. The Aswang lets out a keening howl before collapsing.\nIts body twists and contorts one last time, then dissolves into the black waters of the marsh.");
