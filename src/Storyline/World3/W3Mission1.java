@@ -43,7 +43,36 @@ public class W3Mission1 {
         sc.nextLine();
         System.out.println("[You have encountered 3 Tiyanaks. Please choose a target and an attack]");
 
-        //battle not implemented yet
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIKTIK, 2);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.ABWAK, 2);
+        List<Enemy> enemies3 = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
+        List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.TRIA, 1);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies, 2, false);
+        if (!survived) {
+            return false;
+        }
+
+        survived = battle.startBattle(player, enemies2, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+        survived = battle.startBattle(player, enemies3, 2, false);
+
+        if (!survived) {
+            return false;
+        }
+
+        System.out.println("Hah! You're quite capable. But you do not hold even a candle to my strength.");
+        sc.nextLine();
+        System.out.println("[You are facing Tria, the Master of Mogul. Choose an attack]");
+        survived = battle.startBattle(player, bosses, 2, true);
+        if (!survived) {
+            return false;
+        }
+
+        player.resetCooldowns();
 
         if (player.isAlive()) {
             System.out.println("After the tedious fight with the tiyanak, you and Andrea sit by the side of a stream to recuperate and recover your energy.");
@@ -116,6 +145,7 @@ public class W3Mission1 {
             sc.nextLine();
             System.out.println("[You encountered 2 Babaylans. Please choose a target and an attack.]");
             sc.nextLine();
+
             //battle not implemented yet
 
             if (player.isAlive()) {
