@@ -107,6 +107,12 @@ public class BattleManager {
             if (!enemies.isEmpty()) player.regenerateMana();
 
             if (!player.isAlive()) {
+                if (currentWorld == 1) {
+                    System.out.println("\n☠️ You were defeated in your first mission...");
+                    System.out.println("🔚 GAME OVER");
+                    System.exit(0);
+                }
+
                 System.out.println("💀 You were defeated...");
                 int rescueType = BeggarEvent.trigger(player, currentWorld);
                 if (rescueType == 1) System.out.println("\n✨ Sir Khai has saved you for the first time!");

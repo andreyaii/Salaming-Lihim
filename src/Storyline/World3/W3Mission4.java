@@ -10,6 +10,8 @@ public class W3Mission4 {
 
     public static boolean w3mission4(PlayerCharacter player) {
 
+        //no title card yet
+
         Scanner sc = new Scanner(System.in);
 
         sc.nextLine();
