@@ -18,6 +18,7 @@ public class MusicPlayer {
     public static final String CLICK        = "Background - Click.wav";
     public static final String WINNER       = "Background - Winner.wav";
     public static final String OUTRO        = "Background - Outro.wav";
+
     // ─────────────────────────────────────────────────────────────
 
     /**
