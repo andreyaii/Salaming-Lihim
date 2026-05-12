@@ -2,6 +2,8 @@ package Core;
 
 import Storyline.DialogueUtils;
 import java.util.*;
+import Audio.MusicPlayer;
+
 
 public class Shop {
     private static List<Item> items = new ArrayList<>();
@@ -15,6 +17,7 @@ public class Shop {
     }
 
     public static void enterShop(PlayerCharacter player) {
+        MusicPlayer.play(MusicPlayer.SHOP, true);
         System.out.println("                                              ┃  ┃┃┃┏━┛┃  ┏━┛┏━┃┏┏ ┏━┛  ━┏┛┏━┃  ━┏┛┃ ┃┏━┛  ┏━┛┃ ┃┏━┃┏━┃  ┃");
         System.out.println("                                              ┛  ┃┃┃┏━┛┃  ┃  ┃ ┃┃┃┃┏━┛   ┃ ┃ ┃   ┃ ┏━┃┏━┛  ━━┃┏━┃┃ ┃┏━┛  ┛");
         System.out.println("                                              ┛  ━━┛━━┛━━┛━━┛━━┛┛┛┛━━┛   ┛ ━━┛   ┛ ┛ ┛━━┛  ━━┛┛ ┛━━┛┛    ┛");
@@ -33,6 +36,7 @@ public class Shop {
             int choice;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
             } catch (Exception e) {
                 System.out.println("                                                            ❌ Invalid input. Try again.\n");
                 continue;
@@ -40,6 +44,7 @@ public class Shop {
 
             if (choice == 0) {
                 System.out.println("                                                             >> You leave the shop. <<\n");
+                MusicPlayer.play(MusicPlayer.ADVENTURE, true);
                 break;
             }
 
@@ -55,9 +60,11 @@ public class Shop {
             // Simplified Logic: No more pet or pet food checks
             else if (item.getName().equals("Armor Upgrade")) {
                 player.setBarya(player.getBarya() - item.getPrice());
+                MusicPlayer.playSFX(MusicPlayer.PURCHASE);
                 player.buyArmor();
             } else {
                 player.setBarya(player.getBarya() - item.getPrice());
+                MusicPlayer.playSFX(MusicPlayer.PURCHASE);
                 player.addItem(item);
                 System.out.println("                                                          ✅ You purchased " + item.getName() + "!\n");
             }

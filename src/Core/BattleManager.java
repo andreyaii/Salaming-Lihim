@@ -1,12 +1,12 @@
 package Core;
 
-import java.util.*;
+import Audio.MusicPlayer;
 import Storyline.BeggarEvent;
+import java.util.*;
 
 public class BattleManager {
     Scanner scanner = new Scanner(System.in);
 
-    // ── NEW: HP/Mana bar generator ────────────────
     private String bar(int current, int max, String fillChar, String emptyChar) {
         int length = 20;
         int filled = max > 0 ? (int) ((double) current / max * length) : 0;
@@ -17,29 +17,30 @@ public class BattleManager {
         b.append("] ").append(current).append("/").append(max);
         return b.toString();
     }
-    // ─────────────────────────────────────────────
 
     public boolean startBattle(PlayerCharacter player, List<Enemy> enemies, int currentWorld, boolean isBossBattle) {
+
+        // ── ADDED: battle music ───────────────────────────────────
+        MusicPlayer.play(MusicPlayer.BATTLE_BEGIN, false);
+        try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
+        MusicPlayer.play(MusicPlayer.BATTLE, true);
+
         System.out.println("                                                      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
         System.out.println("                                                      █              ⚔ ️ Battle Begins!             █");
         System.out.println("                                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
         while (player.isAlive() && !enemies.isEmpty()) {
 
-            // ── UPDATED: status display with bars ────
             System.out.println("\n                                                       ┏━PLAYER STATUS───────────────────────────━┓");
             System.out.println("                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░"));
             System.out.println("                                                         Mana " + bar(player.getMana(), player.maxMana, "▓", "░"));
             System.out.println("                                                       ┗━────────────────────────────────────────━┛");
-            // ─────────────────────────────────────────
 
             System.out.println("\n👹 ENEMIES");
             for (int i = 0; i < enemies.size(); i++) {
                 Enemy e = enemies.get(i);
-                // ── UPDATED: enemy also shows HP bar ─
                 System.out.printf("[%d] %s  HP %s\n", i, e.name,
-                        bar(e.hp, 150, "█", "░")); // 150 = max boss hp approx
-                // ─────────────────────────────────────
+                        bar(e.hp, 150, "█", "░"));
             }
 
             int targetIndex;
@@ -107,6 +108,8 @@ public class BattleManager {
             if (!enemies.isEmpty()) player.regenerateMana();
 
             if (!player.isAlive()) {
+                MusicPlayer.stop(); // ← ADDED
+
                 if (currentWorld == 1) {
                     System.out.println("\n☠️ You were defeated in your first mission...");
                     System.out.println("🔚 GAME OVER");
@@ -122,11 +125,14 @@ public class BattleManager {
                     System.out.println("🔚 Game Over");
                     return false;
                 }
+
+                MusicPlayer.play(MusicPlayer.BATTLE, true); // ← ADDED: resume after rescue
                 continue;
             }
         }
 
         if (player.isAlive()) {
+            MusicPlayer.play(MusicPlayer.WINNER, false); // ← ADDED
             System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━★★★★★ QUEST COMPLETE ★★★★★━━━━━━━━━━━━━━━━┓");
             System.out.println("                                                             [🎉] " + player.name + " defeated all enemies!");
             int reward = isBossBattle ? 100 : 20;

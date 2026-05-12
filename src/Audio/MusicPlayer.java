@@ -56,6 +56,33 @@ public class MusicPlayer {
         }
     }
 
+    public static void playSFX(String filename) {
+
+        try {
+
+            InputStream in =
+                    MusicPlayer.class.getResourceAsStream("/audio/" + filename);
+
+            if (in == null) {
+                System.out.println("[MusicPlayer] SFX file not found: " + filename);
+                return;
+            }
+
+            AudioInputStream ais =
+                    AudioSystem.getAudioInputStream(in);
+
+            Clip sfxClip = AudioSystem.getClip();
+            sfxClip.open(ais);
+
+            sfxClip.start();
+
+        } catch (Exception e) {
+
+            System.out.println("[MusicPlayer] Could not play SFX: "
+                    + filename + " — " + e.getMessage());
+        }
+    }
+
     /** Stop and clear whatever is currently playing. */
     public static void stop() {
         if (currentClip != null) {
