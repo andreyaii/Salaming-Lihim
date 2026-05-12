@@ -11,7 +11,7 @@ public class Main {
 
         // ── World 1 ───
         Intro1.intro1(player);
-        W1Mission1.mission1(player);
+        if (!W1Mission1.mission1(player)) return;
         W1Mission2.mission2(player);
         Shop.enterShop(player);
         if (!W1Mission3.mission3(player)) return;

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class W1Mission1 {
-    public static void mission1(PlayerCharacter player) {
+    public static boolean mission1(PlayerCharacter player) {
         Scanner scan = new Scanner(System.in);
 
         System.out.println();
@@ -30,13 +30,16 @@ public class W1Mission1 {
         List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.DUWENDE, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 1, false);
+
+        if (!survived) return false;
+
         scan.nextLine();
         player.resetCooldowns();
 
         System.out.println("\n\nSean: Thank you so much. I owe you my livelihood. Tell me, what would you like in return?");
         scan.nextLine();
 
-        System.out.print(player.name + ": I’m actually investigating a bunch of disappearances around the city. Do you know anything about that?\n");
+        System.out.print(player.name + ": I'm actually investigating a bunch of disappearances around the city. Do you know anything about that?\n");
         scan.nextLine();
 
         System.out.println("Sean: Well, the word on the street is that some sort of giant is kidnapping Enkantos and Diwatas. If you want to know more, you might want to\n" +
@@ -48,5 +51,6 @@ public class W1Mission1 {
         System.out.println();
         player.rest();
         DialogueUtils.pause();
+        return true;
     }
 }

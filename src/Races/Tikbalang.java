@@ -10,8 +10,6 @@ public class Tikbalang extends Race {
     private int specialBonusDamage = 0;
     private final Random random = new Random();
 
-
-    //basic stats
     @Override
     public int getBaseHp() {
         return 185;
@@ -27,7 +25,6 @@ public class Tikbalang extends Race {
         return "Tikbalang";
     }
 
-    //attacks
     public int attack() {
         return random.nextInt(11) + 5;
     }
@@ -52,16 +49,15 @@ public class Tikbalang extends Race {
         System.out.println(playerName + " deals " + netDmg + " piercing damage to " + target.name + "!");
     }
 
-    //mana
-    public int getSkillManaCost() { return 20; }
-    public int getSpecialManaCost() { return 40; }
+    public int getSkillManaCost()   { return 30; } // increased from 20
+    public int getSpecialManaCost() { return 60; } // increased from 40
+
     public void increaseSpecialDamage(int amount) {
         this.specialBonusDamage += amount;
     }
 
-    //art
     @Override
     public void displayArt() {
-        RaceArt.displayKapre();
+        RaceArt.displayTikbalang();
     }
 }

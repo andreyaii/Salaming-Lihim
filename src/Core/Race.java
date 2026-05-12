@@ -5,7 +5,6 @@ import java.util.Map;
 
 public abstract class Race {
 
-    //Selecting Race Options
     public static Map<Integer, String> getAvailableRaces() {
         Map<Integer, String> races = new LinkedHashMap<>();
         races.put(1, "Tikbalang");
@@ -24,9 +23,8 @@ public abstract class Race {
     public abstract int getSpecialManaCost();
     public abstract void increaseSpecialDamage(int amount);
 
-    public int getSkillCooldown()   { return 2; }
-    public int getSpecialCooldown() { return 3; }
+    public int getSkillCooldown()   { return 3; } // increased from 2
+    public int getSpecialCooldown() { return 4; } // increased from 3
 
-    // --art --
     public abstract void displayArt();
 }

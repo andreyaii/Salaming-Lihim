@@ -7,22 +7,20 @@ public class PlayerCharacter {
     public String name, race;
     private int hp, mana, defense = 5;
     private Race raceType;
-    private final int manaRegen = 10;
-    private int armorLevel = 0;
     public int maxHp;
     public int maxMana;
+    private int armorLevel = 0;
     private int level;
     private int barya = 0;
-    private List<Item>  inventory = new ArrayList<>();
+    private List<Item> inventory = new ArrayList<>();
 
     public List<Item> getInventory() {
         return inventory;
     }
 
-
     // Cooldown counters
     private int skillCooldown = 0;
-    private int specialCooldown = 2;
+    private int specialCooldown = 4; // locked at start; must wait 4 turns
 
     public PlayerCharacter(String name, Race raceType) {
         this.name = name;
@@ -39,11 +37,9 @@ public class PlayerCharacter {
         return level;
     }
 
-
     public boolean isAlive() {
         return hp > 0;
     }
-
 
     public void dealDamage(Enemy target) {
         System.out.println(name + " " + raceType.getAttackDesc());
@@ -62,10 +58,8 @@ public class PlayerCharacter {
             System.out.println("Not enough mana!");
             return;
         }
-
         mana -= raceType.getSkillManaCost();
         if (mana < 0) mana = 0;
-
         raceType.useSkill(name, target);
         skillCooldown = raceType.getSkillCooldown();
     }
@@ -85,23 +79,15 @@ public class PlayerCharacter {
         specialCooldown = raceType.getSpecialCooldown();
     }
 
-//    public int void regenerateMana() {
-//        int before = mana;
-//        mana = Math.min(mana + manaRegen, raceType.getBaseMana() + classType.getBonusMana());
-//        System.out.println(name + " regenerates " + (mana - before) + " mana.");
-//    }
-
     public void regenerateMana() {
         int before = mana;
-
         if (mana < maxMana) {
-            mana = Math.min(mana + 10, maxMana);
+            mana = Math.min(mana + 5, maxMana); // reduced from 10 to 5
             System.out.println(name + " regenerates " + (mana - before) + " mana.");
         } else {
             System.out.println(name + " is already at full mana.");
         }
     }
-
 
     public void reduceCooldowns() {
         if (skillCooldown > 0) skillCooldown--;
@@ -109,7 +95,7 @@ public class PlayerCharacter {
     }
 
     public void resetCooldowns() {
-        specialCooldown = 2;
+        specialCooldown = 4;
         skillCooldown = 0;
     }
 
@@ -137,8 +123,6 @@ public class PlayerCharacter {
         System.out.println("                                                           ────────────────────────────────\n");
     }
 
-    // ----- Inventory -----
-
     public void addItem(Item item) {
         inventory.add(item);
     }
@@ -156,19 +140,16 @@ public class PlayerCharacter {
 
     public void useItem(Item item) {
         switch (item.getName()) {
-
             case "Health Potion":
                 setHp(maxHp);
                 inventory.remove(item);
                 System.out.println("\n🧪 You used a Health Potion -- the elixir of life! HP fully restored.\n");
                 break;
-
             case "Mana Potion":
                 mana = maxMana;
                 inventory.remove(item);
                 System.out.println("\n🔮 You used a Mana Potion -- the elixir of power! Mana fully restored.\n");
                 break;
-
             default:
                 System.out.println("\n❌ You can't use this item.\n");
         }
@@ -176,17 +157,15 @@ public class PlayerCharacter {
 
     public void modifyHp(int amount) {
         hp -= amount;
-
         if (hp < 0) hp = 0;
         if (hp > maxHp) hp = maxHp;
     }
 
-
     public boolean isAlive;
+
     public void setAlive(boolean alive) {
-        //this.isAlive = alive;   (NOT USED - LEAVE IT EMPTY)
+        // intentionally empty
     }
-    // ----- Barya -----
 
     public int getBarya() {
         return barya;
@@ -200,17 +179,15 @@ public class PlayerCharacter {
         this.barya += amount;
     }
 
-    // ----- Mana, hp, and Defense setters/getters -----
-
     public void setMana(int mana) {
         this.mana = Math.max(0, Math.min(mana, maxMana));
     }
 
-    public int getMana(){
+    public int getMana() {
         return mana;
     }
 
-    public void setHp(int hp){
+    public void setHp(int hp) {
         if (hp > maxHp) {
             this.hp = maxHp;
         } else {
@@ -218,7 +195,7 @@ public class PlayerCharacter {
         }
     }
 
-    public int getHp(){
+    public int getHp() {
         return hp;
     }
 
@@ -232,9 +209,7 @@ public class PlayerCharacter {
 
     public void buyArmor() {
         armorLevel++;
-
         int addedDefense = 0;
-
         if (armorLevel == 1) {
             addedDefense = 2;
         } else if (armorLevel == 2) {
@@ -244,21 +219,17 @@ public class PlayerCharacter {
         } else {
             addedDefense = 5;
         }
-
         defense += addedDefense;
-
         System.out.println("                                             ️🛡️ Armor upgraded! Defense +" + addedDefense + " (Total Defense: " + defense + ")\n");
     }
 
-    public int getArmorLevel(){
+    public int getArmorLevel() {
         return armorLevel;
     }
 
     public void rest() {
         setHp(maxHp);
         setMana(maxMana);
-        //reset cooldowns
-
         System.out.println(name + " was able to get some rest.");
         System.out.println("Health and Mana recovered to full!");
         System.out.println();
@@ -266,7 +237,6 @@ public class PlayerCharacter {
 
     public void levelUp() {
         level++;
-
         maxHp = (int) Math.round(maxHp * Math.pow(1.10, 1));
         hp = maxHp;
         mana = maxMana = (int) Math.round(maxMana * Math.pow(1.10, 1));

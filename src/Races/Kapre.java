@@ -10,8 +10,6 @@ public class Kapre extends Race {
     private int heatPowerBonus = 0;
     private final Random random = new Random();
 
-
-    //basic Stats
     @Override
     public int getBaseHp() {
         return 180;
@@ -25,8 +23,6 @@ public class Kapre extends Race {
     @Override
     public String getRaceName() { return "Kapre"; }
 
-
-    //attacks
     public int attack() {
         return random.nextInt(11) + 5;
     }
@@ -51,12 +47,11 @@ public class Kapre extends Race {
         System.out.println(playerName + " deals " + netDmg + " thermal damage to " + target.name + "!");
     }
 
-    //mana
-    public int getSkillManaCost() { return 20; }
-    public int getSpecialManaCost() { return 40; }
+    public int getSkillManaCost()   { return 30; } // increased from 20
+    public int getSpecialManaCost() { return 60; } // increased from 40
+
     public void increaseSpecialDamage(int amount) { this.heatPowerBonus += amount; }
 
-    //art
     @Override
     public void displayArt() {
         RaceArt.displayKapre();
