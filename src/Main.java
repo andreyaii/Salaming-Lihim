@@ -39,6 +39,7 @@ public class Main {
         W3Mission3.w3mission5(player);
         Shop.enterShop(player);
 
+
         if (!W3Mission4.w3mission4(player)) return;
 
         Ending.ending();

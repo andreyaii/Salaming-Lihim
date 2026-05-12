@@ -27,6 +27,8 @@ public class MusicPlayer {
     public static final String INTRO2 = "Background - Intro 2.wav";
     public static final String INTRO3 = "Background - Intro 3.wav";
     public static final String GAME_OVER = "Background - Defeat - Game Over.wav";
+    public static final String SFX_HEAL = "SFX - HEAL.wav";
+    public static final String SFX_MANA = "SFX - MANA.wav";
     // ─────────────────────────────────────────────────────────────
 
     /**
