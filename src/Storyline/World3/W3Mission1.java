@@ -122,11 +122,11 @@ public class W3Mission1 {
         sc.nextLine();
         System.out.println("[You encountered 2 Babaylans. Please choose a target and an attack.]");
         sc.nextLine();
-
-        // Fixed: battle is now actually implemented instead of skipped
+        
         List<Enemy> babaylans = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 2);
-        survived = battle.startBattle(player, babaylans, 3, false);
-        if (!survived) return false;
+        BattleManager battle2 = new BattleManager();
+        boolean babaylanSurvived = battle2.startBattle(player, babaylans, 3, false);
+        if (!babaylanSurvived) return false;
         player.resetCooldowns();
 
         System.out.println("You and Andrea finish off the last of the enemies. The remaining Babaylans scatter into the forest.");
