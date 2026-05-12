@@ -37,13 +37,17 @@ public class W3Mission3 {
         System.out.println("White Lady: Strength and magic shape every path you have walked. Choose which burden you will lighten, and which wound you will carry forward.");
         sc.nextLine();
 
-        System.out.println("[1] Sacrifice half of your current hp. Your vitality withers.");
-        System.out.println("[2] Sacrifice half of your current mana. Your magical core dims.");
+        System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("                                             ┃ >> A heavy price must be paid:                                   ┃");
+        System.out.println("                                             ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.println("                                             ┃ [1] Sacrifice half of your current hp. Your vitality withers.    ┃");
+        System.out.println("                                             ┃ [2] Sacrifice half of your current mana. Your magical core dims. ┃");
+        System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         System.out.println();
 
         while (true){
             try {
-                System.out.print("Enter your choice: ");
+                System.out.print("                                                              Enter your choice: ");
                 choice = sc.nextInt();
                 if (choice == 1) {
                     player.setHp(player.getHp() / 2);
@@ -56,13 +60,13 @@ public class W3Mission3 {
                     System.out.println("White Lady: Power wanes, but resolve sharpens. The moon tests those who rely not on spells, but on will.");
                     break;
                 } else {
-                    System.out.println("❌ Invalid choice. Please enter 1 or 2.\n");
+                    System.out.println("                                                        ❌ Invalid choice. Please enter 1 or 2.\n");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("❌ Invalid input. Please enter 1 or 2.\n");
+                System.out.println("                                                         ❌ Invalid input. Please enter 1 or 2.\n");
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("⚠️ An unexpected error occurred: " + e.getMessage());
+                System.out.println("                                                         ⚠️ An unexpected error occurred: " + e.getMessage());
                 sc.nextLine();
             }
         }

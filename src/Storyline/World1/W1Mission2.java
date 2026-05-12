@@ -37,18 +37,18 @@ public class W1Mission2 {
 
         while(true) {
 
-            System.out.println("\n                                                         ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-            System.out.println("                                                         ┃ >> Do you give away your only money to help          ┃");
-            System.out.println("                                                         ┃    a begging stranger?                               ┃");
-            System.out.println("                                                         ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
-            System.out.println("                                                         ┃        [1] Yes, help them      [2] No, walk away     ┃");
-            System.out.println("                                                         ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            System.out.print("                                                                         Enter your choice: ");
+            System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("                                             ┃ >> Do you give away your only money to help          ┃");
+            System.out.println("                                             ┃    a begging stranger?                               ┃");
+            System.out.println("                                             ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+            System.out.println("                                             ┃        [1] Yes, help them      [2] No, walk away     ┃");
+            System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            System.out.print("                                                              Enter your choice: ");
             try {
                 int choice = scan.nextInt();
                 if (choice == 2) {
                     System.out.println();
-                    System.out.println("                                                                 You have chosen not to help the beggar.");
+                    System.out.println("                                                              You have chosen not to help the beggar.");
                     System.out.println();
                     scan.nextLine();
                     System.out.println(player.name + ": I’m sorry, friend, but I do not have the money to spare. Best of luck to you.");
@@ -58,7 +58,7 @@ public class W1Mission2 {
                 } else if (choice == 1){
                     helpedBeggar = true;
                     System.out.println();
-                    System.out.println("                                                                 You have chosen to help the beggar.");
+                    System.out.println("                                                              You have chosen to help the beggar.");
                     System.out.println();
                     scan.nextLine();
                     System.out.println(player.name + ": Here’s " + player.getBarya() + " barya. I’m sorry, it’s all I have, but I do hope you can use it to seek treatment for your illness.");
@@ -91,13 +91,13 @@ public class W1Mission2 {
                     System.out.println("🏦 Total barya: " + player.getBarya());
                     break;
                 } else {
-                    System.out.println("                                                                  ❌ Invalid choice. Please enter 1 or 2.\n");
+                    System.out.println("                                                        ❌ Invalid choice. Please enter 1 or 2.\n");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("                                                                  ❌ Invalid input. Please enter 1 or 2.\n");
+                System.out.println("                                                        ❌ Invalid input. Please enter 1 or 2.\n");
                 scan.nextLine();
             } catch (Exception e) {
-                System.out.println("                                                                  ⚠️ An unexpected error occurred: " + e.getMessage());
+                System.out.println("                                                        ⚠️ An unexpected error occurred: " + e.getMessage());
                 scan.nextLine();
             }
         }

@@ -116,9 +116,13 @@ public class W3Mission1 {
 
             while (true) {
                 try {
-                    System.out.println("[1] Create a distraction while Andrea frees Kheila.");
-                    System.out.println("[2] Stealth attack the Babaylans before they notice you.");
-                    System.out.print("Enter your choice: ");
+                    System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+                    System.out.println("                                             ┃ >> What's your approach?                                     ┃");
+                    System.out.println("                                             ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+                    System.out.println("                                             ┃ [1] Create a distraction while Andrea frees Kheila.          ┃");
+                    System.out.println("                                             ┃ [2] Stealth attack the Babaylans before they notice you.     ┃");
+                    System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+                    System.out.print("                                                              Enter your choice: ");
 
                     int choice = sc.nextInt();
 
@@ -129,14 +133,14 @@ public class W3Mission1 {
                         System.out.println("You and Andrea move in silently, striking fast. The nearest Babaylan falls before he can even shout. Kheila’s eyes widen in shock as Andrea slices through her bindings.");
                         break;
                     } else {
-                        System.out.println("❌ Invalid choice. Please enter 1 or 2.\n");
+                        System.out.println("                                                        ❌ Invalid choice. Please enter 1 or 2.\n");
 
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("❌ Invalid input. Please enter 1 or 2.\n");
+                    System.out.println("                                                        ❌ Invalid input. Please enter 1 or 2.\n");
                     sc.nextLine();
                 } catch (Exception e) {
-                    System.out.println("⚠️ An unexpected error occurred: " + e.getMessage());
+                    System.out.println("                                                        ⚠️ An unexpected error occurred: " + e.getMessage());
                     sc.nextLine();
                 }
             }
