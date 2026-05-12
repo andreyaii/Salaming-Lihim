@@ -1,0 +1,116 @@
+Index: src/Storyline/World3/W3Mission1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Storyline.World3;\r\n\r\nimport Core.*;\r\nimport Storyline.DialogueUtils;\r\n\r\nimport java.util.InputMismatchException;\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class W3Mission1 {\r\n    public static boolean w3mission1(PlayerCharacter player) {\r\n        Scanner sc = new Scanner(System.in);\r\n        System.out.println();\r\n        System.out.println(\"         ============================================================================================================================================\");\r\n        System.out.println(\"         ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀█░░░░░░░░░░█░█░█▀█░█▀█░█░█░▀█▀░█▀█░█▀▀░░░▀█▀░█░█░█▀▀░░░█▄█░█▀█░█░█░█▀█░▀█▀░█▀█░▀█▀░█▀█░░░░░░▄▀░░▄▀\");\r\n        System.out.println(\"         ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░█░░░▀░░░░░░█▀▄░█░█░█░█░█▄█░░█░░█░█░█░█░░░░█░░█▀█░█▀▀░░░█░█░█░█░█░█░█░█░░█░░█▀█░░█░░█░█░░░░░▀▄░░▀▄░\");\r\n        System.out.println(\"         ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀░▀░▀▀▀░▀░▀░░░░░░░▀░░░▀\");\r\n        System.out.println(\"         ============================================================================================================================================\");\r\n        System.out.println();\r\n        sc.nextLine();\r\n\r\n        System.out.println(\"After persevering through Mogul's suffocating darkness for days on end, Mt. Kanatuan's gentle sunrise leaves you nearly blinded.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Andrea: We should search our surroundings for clues and any signs of life.\");\r\n        sc.nextLine();\r\n        System.out.println(\"You and Andrea begin to cautiously follow the trail and eventually end up in a small clearing with a fallen tree in the middle.\\nYou scan the area and see a small, ragged satchel beside the tree trunk. \");\r\n        sc.nextLine();\r\n\r\n        Item hpPotion = new Item(\"Health Potion\", 0, \"Restores HP to full\", ItemType.HEALTH);\r\n        Item manaPotion = new Item(\"Mana Potion\", 0, \"Restores Mana to full\", ItemType.MANA);\r\n        player.addItem(hpPotion);\r\n        player.addItem(manaPotion);\r\n\r\n        System.out.println(\"\uD83E\uDDEA You found a Health Potion and a Mana Potion!\");\r\n        System.out.println();\r\n        System.out.println(\"Andrea: That's a nice find!\");\r\n        sc.nextLine();\r\n        System.out.println(player.name + \": Indeed. We should go explore the mountain some more.\");\r\n        sc.nextLine();\r\n        System.out.println(\"But your blood runs cold when you're faced with tiyanaks, their sharp black teeth glinting with viscera.\");\r\n        sc.nextLine();\r\n        System.out.println(\"[You have encountered 3 Tiyanaks. Please choose a target and an attack]\");\r\n\r\n        // Fixed: was incorrectly spawning Tria's henchmen here\r\n        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIYANAK, 3);\r\n        BattleManager battle = new BattleManager();\r\n        boolean survived = battle.startBattle(player, enemies, 3, false);\r\n        if (!survived) return false;\r\n        player.resetCooldowns();\r\n\r\n        System.out.println(\"After the tedious fight with the tiyanaks, you and Andrea sit by the side of a stream to recuperate and recover your energy.\");\r\n        sc.nextLine();\r\n\r\n        player.rest();\r\n        DialogueUtils.pause();\r\n\r\n        System.out.println(\"But after only a few minutes, your peaceful respite is interrupted by the sound of footsteps from a distance.\");\r\n        sc.nextLine();\r\n        System.out.println(\"???: Over there!!! Spread out and search the area. That traitor couldn't have gone far.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Before they can come any closer, you and Andrea move to take cover in a secluded area behind some thick bushes.\\nSimultaneously, you and Andrea still your breaths when you hear footsteps stop right in front of your hiding place.\");\r\n        sc.nextLine();\r\n        System.out.println(\"???: What will we do with Kheila when we find her, Commander?\");\r\n        sc.nextLine();\r\n        System.out.println(\"Commander: Don't even say that name in front of me.\");\r\n        sc.nextLine();\r\n        System.out.println(\"You hear the commander seemingly spitting in disgust at the traitor they speak of.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Commander: Trashy lowlife sympathiser! She will be brought to her knees in front of the mistress and executed for her crimes.\");\r\n        sc.nextLine();\r\n        System.out.println(\"???: Commander, we've found some tracks heading south.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Commander: Alright, move out. We must catch that traitor!\");\r\n        sc.nextLine();\r\n        System.out.println(\"You wait for a few more minutes after they leave before getting out of your hiding place.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Andrea: Those were Babaylans. They said they were looking for a traitor.\\nDo you think we should look for whoever that Kheila is and ask for her help?\\nShe might have some information against the Babaylans.\");\r\n        sc.nextLine();\r\n        System.out.println(player.name + \": Let's go. It's definitely worth a try.\");\r\n        sc.nextLine();\r\n        System.out.println(\"You follow the tracks of deep footprints, broken branches, and streaks of blood winding down a narrow path into the lower forest.\\nThe air grows dense with mist, and the once-cheerful songs of birds fade into silence.\");\r\n        sc.nextLine();\r\n        System.out.println(\"After several minutes, you spot flickering lights ahead—a camp.\");\r\n        System.out.println(\"You crouch behind a fallen log. In the clearing, several Babaylans circle a campfire.\\nBound and gagged near the flames sits a woman with matted hair and bruised wrists.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Andrea: That must be her… Kheila.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Commander: Tighten her bonds! The Mistress will be pleased once we drag this traitor back to the altar.\");\r\n\r\n        while (true) {\r\n            try {\r\n                System.out.println(\"\\n                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\");\r\n                System.out.println(\"                                             ┃ >> What's your approach?                                     ┃\");\r\n                System.out.println(\"                                             ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\");\r\n                System.out.println(\"                                             ┃ [1] Create a distraction while Andrea frees Kheila.          ┃\");\r\n                System.out.println(\"                                             ┃ [2] Stealth attack the Babaylans before they notice you.     ┃\");\r\n                System.out.println(\"                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\");\r\n                System.out.print(\"                                                              Enter your choice: \");\r\n\r\n                int choice = sc.nextInt();\r\n                sc.nextLine();\r\n\r\n                if (choice == 1) {\r\n                    System.out.println(\"You throw a stone to the far side of the camp. A few Babaylans turn to investigate the noise. Andrea slips through the shadows toward Kheila, cutting the ropes binding her wrists.\");\r\n                    break;\r\n                } else if (choice == 2) {\r\n                    System.out.println(\"You and Andrea move in silently, striking fast. The nearest Babaylan falls before he can even shout. Kheila's eyes widen in shock as Andrea slices through her bindings.\");\r\n                    break;\r\n                } else {\r\n                    System.out.println(\"                                                        ❌ Invalid choice. Please enter 1 or 2.\\n\");\r\n                }\r\n            } catch (InputMismatchException e) {\r\n                System.out.println(\"                                                        ❌ Invalid input. Please enter 1 or 2.\\n\");\r\n                sc.nextLine();\r\n            } catch (Exception e) {\r\n                System.out.println(\"                                                        ⚠\uFE0F An unexpected error occurred: \" + e.getMessage());\r\n                sc.nextLine();\r\n            }\r\n        }\r\n\r\n        System.out.println(\"Commander: Intruders! Stop them!\");\r\n        sc.nextLine();\r\n        System.out.println(\"[You encountered 2 Babaylans. Please choose a target and an attack.]\");\r\n        sc.nextLine();\r\n\r\n        // Fixed: battle is now actually implemented instead of skipped\r\n        List<Enemy> babaylans = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 2);\r\n        survived = battle.startBattle(player, babaylans, 3, false);\r\n        if (!survived) return false;\r\n        player.resetCooldowns();\r\n\r\n        System.out.println(\"You and Andrea finish off the last of the enemies. The remaining Babaylans scatter into the forest.\");\r\n        System.out.println(\"You kneel beside the rescued woman. She's breathing heavily, clutching at her raw wrists.\");\r\n        sc.nextLine();\r\n        System.out.println(player.name + \": You're safe now. You're Kheila, right?\");\r\n        sc.nextLine();\r\n        System.out.println(\"Kheila: Yes, thank you for rescuing me. I was one of them.\\nI helped with their rituals until I learned that they want to merge the powers of Mogul\\nand the mortal world so they can make the Babaylan Mistress the ruler of Biringan City.\\nI tried to warn the others, but they called me a traitor.\");\r\n        sc.nextLine();\r\n        System.out.println(player.name + \": Tria mentioned something. A \\\"Babaylan's plan.\\\" So it's true, then?\");\r\n        sc.nextLine();\r\n        System.out.println(\"Kheila: Yes, but all is not lost. I stole this from their leader before I ran away.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Kheila reaches into her tattered cloak and pulls out a worn, ancient scroll, its edges blackened as if burned.\");\r\n        sc.nextLine();\r\n        System.out.println(\"Kheila: This contains a clue to find the Babaylan's best-kept secret--\\na weapon that has the power to destroy even the strongest of them all.\");\r\n\r\n        DialogueUtils.pause();\r\n        return true;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Storyline/World3/W3Mission1.java b/src/Storyline/World3/W3Mission1.java
+--- a/src/Storyline/World3/W3Mission1.java	(revision dbcaaa61472d5dfd058b69409c0b6a7585efe325)
++++ b/src/Storyline/World3/W3Mission1.java	(date 1778587879487)
+@@ -122,11 +122,11 @@
+         sc.nextLine();
+         System.out.println("[You encountered 2 Babaylans. Please choose a target and an attack.]");
+         sc.nextLine();
+-
+-        // Fixed: battle is now actually implemented instead of skipped
++        
+         List<Enemy> babaylans = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 2);
+-        survived = battle.startBattle(player, babaylans, 3, false);
+-        if (!survived) return false;
++        BattleManager battle2 = new BattleManager();
++        boolean babaylanSurvived = battle2.startBattle(player, babaylans, 3, false);
++        if (!babaylanSurvived) return false;
+         player.resetCooldowns();
+ 
+         System.out.println("You and Andrea finish off the last of the enemies. The remaining Babaylans scatter into the forest.");
+Index: src/Audio/MusicPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Audio/MusicPlayer.java b/src/Audio/MusicPlayer.java
+new file mode 100644
+--- /dev/null	(date 1778588800127)
++++ b/src/Audio/MusicPlayer.java	(date 1778588800127)
+@@ -0,0 +1,61 @@
++package Audio;
++
++import javax.sound.sampled.*;
++import java.io.IOException;
++import java.net.URL;
++
++public class MusicPlayer {
++
++    private static Clip clip;
++
++    public static void play(String fileName, boolean loop) {
++
++        try {
++
++            // stop current music first
++            if (clip != null && clip.isRunning()) {
++                clip.stop();
++                clip.close();
++            }
++
++            // get file from resources/audio
++            URL soundURL =
++                    MusicPlayer.class.getResource("/audio/" + fileName);
++
++            // check if file exists
++            if (soundURL == null) {
++                System.out.println("Music file not found: " + fileName);
++                return;
++            }
++
++            // load audio
++            AudioInputStream audioStream =
++                    AudioSystem.getAudioInputStream(soundURL);
++
++            clip = AudioSystem.getClip();
++            clip.open(audioStream);
++
++            // loop music if true
++            if (loop) {
++                clip.loop(Clip.LOOP_CONTINUOUSLY);
++            }
++
++            // play
++            clip.start();
++
++        } catch (UnsupportedAudioFileException |
++                 IOException |
++                 LineUnavailableException e) {
++
++            System.out.println("Error playing music: " + e.getMessage());
++        }
++    }
++
++    public static void stop() {
++
++        if (clip != null) {
++            clip.stop();
++            clip.close();
++        }
++    }
++}
+\ No newline at end of file
+Index: .idea/Salaming-Lihim.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"KotlinJavaRuntime\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Salaming-Lihim.iml b/.idea/Salaming-Lihim.iml
+--- a/.idea/Salaming-Lihim.iml	(revision dbcaaa61472d5dfd058b69409c0b6a7585efe325)
++++ b/.idea/Salaming-Lihim.iml	(date 1778586034121)
+@@ -3,6 +3,7 @@
+   <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+     </content>
+     <orderEntry type="inheritedJdk" />

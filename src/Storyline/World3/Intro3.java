@@ -1,9 +1,11 @@
 package Storyline.World3;
 
 import Storyline.DialogueUtils;
+import Audio.MusicPlayer;
 
 public class Intro3 {
     public static void intro3 () {
+        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
 
         System.out.println("   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ ");
         System.out.println("   ║      ▲        ▲  .        ▪        .     ▲▲▲     .        ▪    .       .           ▪             .     ▪          ▪         ▲▲▲                ▲      ║ ");

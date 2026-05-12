@@ -2,9 +2,14 @@ package Storyline.World2;
 
 //import Core.*;
 import Storyline.DialogueUtils;
+import Audio.MusicPlayer;
+
 
 public class Intro2 {
     public static void intro2(){
+
+        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
+
         System.out.println();
         System.out.println("   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ ");
         System.out.println("   ║                                                                                                                                                       ║ ");

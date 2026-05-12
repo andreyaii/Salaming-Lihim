@@ -1,61 +1,68 @@
 package Audio;
 
 import javax.sound.sampled.*;
-import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 
 public class MusicPlayer {
 
-    private static Clip clip;
+    private static Clip currentClip;
+    private static String currentTrack = "";
 
-    public static void play(String fileName, boolean loop) {
+    // ── Track name constants ──────────────────────────────────────
+    public static final String INTRO        = "Background - Intro.wav";
+    public static final String ADVENTURE    = "Background - Adventure.wav";
+    public static final String BATTLE_BEGIN = "Background - Battle Begins.wav";
+    public static final String BATTLE       = "Background - Battle.wav";
+    public static final String SHOP         = "Background - Shop.wav";
+    public static final String PURCHASE     = "Background - Purchase.wav";
+    public static final String CLICK        = "Background - Click.wav";
+    public static final String WINNER       = "Background - Winner.wav";
+    public static final String OUTRO        = "Background - Outro.wav";
+    // ─────────────────────────────────────────────────────────────
+
+    /**
+     * Play a track.
+     * @param filename  one of the constants above
+     * @param loop      true = loop forever, false = play once
+     */
+    public static void play(String filename, boolean loop) {
+        // Guard: don't restart the same looping track
+        if (filename.equals(currentTrack) && currentClip != null && currentClip.isRunning()) {
+            return;
+        }
+
+        stop(); // stop whatever was playing
 
         try {
-
-            // stop current music first
-            if (clip != null && clip.isRunning()) {
-                clip.stop();
-                clip.close();
-            }
-
-            // get file from resources/audio
-            URL soundURL =
-                    MusicPlayer.class.getResource("/audio/" + fileName);
-
-            // check if file exists
-            if (soundURL == null) {
-                System.out.println("Music file not found: " + fileName);
+            InputStream in = MusicPlayer.class.getResourceAsStream("/audio/" + filename);
+            if (in == null) {
+                System.out.println("[MusicPlayer] File not found: " + filename);
                 return;
             }
+            AudioInputStream ais = AudioSystem.getAudioInputStream(in);
+            currentClip = AudioSystem.getClip();
+            currentClip.open(ais);
 
-            // load audio
-            AudioInputStream audioStream =
-                    AudioSystem.getAudioInputStream(soundURL);
-
-            clip = AudioSystem.getClip();
-            clip.open(audioStream);
-
-            // loop music if true
             if (loop) {
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
+                currentClip.loop(Clip.LOOP_CONTINUOUSLY);
+            } else {
+                currentClip.start();
             }
 
-            // play
-            clip.start();
+            currentTrack = filename;
 
-        } catch (UnsupportedAudioFileException |
-                 IOException |
-                 LineUnavailableException e) {
-
-            System.out.println("Error playing music: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("[MusicPlayer] Could not play: " + filename + " — " + e.getMessage());
         }
     }
 
+    /** Stop and clear whatever is currently playing. */
     public static void stop() {
-
-        if (clip != null) {
-            clip.stop();
-            clip.close();
+        if (currentClip != null) {
+            currentClip.stop();
+            currentClip.close();
+            currentClip = null;
         }
+        currentTrack = "";
     }
 }

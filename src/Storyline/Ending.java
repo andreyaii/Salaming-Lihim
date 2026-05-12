@@ -1,7 +1,10 @@
 package Storyline;
 
+import Audio.MusicPlayer;
+
 public class Ending {
     public static void ending() {
+        MusicPlayer.play(MusicPlayer.OUTRO, false);
 
         System.out.println("\n\n");
         System.out.println("                                                         ▄▄▄█████▓ ██░ ██ ▓█████    ▓█████  ███▄    █ ▓█████▄ ");

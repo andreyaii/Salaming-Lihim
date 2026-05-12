@@ -2,10 +2,12 @@ package Storyline.World1;
 
 import Storyline.DialogueUtils;
 import Core.PlayerCharacter;
+import Audio.MusicPlayer;
 
 
 public class Intro1 {
     public static void intro1(PlayerCharacter player) {
+        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
 
         System.out.println("                          With the hero's instincts as a " + player.race +
                 ", he/she starts to find clues in the heart of Biringan City.\n                                " +
