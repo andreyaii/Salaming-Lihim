@@ -2,6 +2,7 @@ package Storyline.World3;
 
 import Core.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class W3Mission4 {
@@ -15,10 +16,16 @@ public class W3Mission4 {
         sc.nextLine();
         System.out.println("[You have encountered 8 Babaylans. Please choose a target and an attack.]");
 
+        List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.ERIKA, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.ERIKA2, 2);
+        List<Enemy> enemies1 = EnemyFactory.spawnEnemies(EnemyType.HUMANS, 2);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 3);
+        BattleManager battle = new BattleManager();
+        boolean survived = battle.startBattle(player, enemies2, 3, true);
 
-        //battle to implement
-
-
+        if (!survived) {
+            return false;
+        }
         player.resetCooldowns();
 
         System.out.println("The last Babaylan crouches in defeat. She looks up at Kheila weakly but with a resentful glare.");
