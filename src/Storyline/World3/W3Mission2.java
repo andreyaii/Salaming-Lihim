@@ -10,7 +10,12 @@ public class W3Mission2 {
     public static boolean w3mission2(PlayerCharacter player) {
         Scanner sc = new Scanner(System.in);
 
-        //no title card yet
+        System.out.println("  ============================================================================================================================================================");
+        System.out.println("  ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀▀▄░░░░░░░▀█▀░█░█░█▀▀░░░█▀▄░█░█░▀█▀░█▀█░█▀▀░░░█▀█░█▀▀░░░█▀▄░█▀█░█▀█░█░█░█▀█░░░░░█▀█░█▀█░░░█▀▄░█▀█░█▀█░█▀█░░░░▄▀░░▄▀ ");
+        System.out.println("  ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░▄▀░░░▀░░░░░█░░█▀█░█▀▀░░░█▀▄░█░█░░█░░█░█░▀▀█░░░█░█░█▀▀░░░█▀▄░█▀█░█░█░█▄█░█▀█░▄▄▄░█▀█░█░█░░░█░█░█▀█░█▀█░█░█░░░▀▄░░▀▄░ ");
+        System.out.println("  ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░░░░░▀▀░░▀░▀░▀░▀░▀░▀░▀░▀░░░░░▀░▀░▀░▀░░░▀▀░░▀░▀░▀░▀░▀░▀░░░░░▀░░░▀ ");
+        System.out.println("  ============================================================================================================================================================");
+
         sc.nextLine();
         System.out.println("The three of you follow the guidance of the map as it leads you through ancient ruins until you reach a grand hall where massive moonstone pillars encircle a raised altar.\nUpon it rests a blade glowing faintly silver: the Blade of Bulan.");
         sc.nextLine();
@@ -20,6 +25,7 @@ public class W3Mission2 {
         sc.nextLine();
 
         System.out.println("[You encountered 2 Babaylan Sentinels. Please choose a target and an attack.]");
+
         List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS2, 2);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 3, false);
