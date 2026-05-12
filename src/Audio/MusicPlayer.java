@@ -18,7 +18,15 @@ public class MusicPlayer {
     public static final String CLICK        = "Background - Click.wav";
     public static final String WINNER       = "Background - Winner.wav";
     public static final String OUTRO        = "Background - Outro.wav";
-
+    public static final String SFX_TRANSCEND    = "SFX - Transcend.wav";
+    public static final String SFX_TRIPLE_STAB  = "SFX - Triple Stab.wav";
+    public static final String SFX_HOOF_CHARGE  = "SFX - Hoof Charge.wav";
+    public static final String SFX_CINDER_BLAST = "SFX - Cinder Blast.wav";
+    public static final String SFX_KAPRE_ATTACK = "SFX - Kapre Attack.wav";
+    public static final String SFX_SMOKE_CLOUD  = "SFX - Smoke Cloud.wav";
+    public static final String INTRO2 = "Background - Intro 2.wav";
+    public static final String INTRO3 = "Background - Intro 3.wav";
+    public static final String GAME_OVER = "Background - Defeat - Game Over.wav";
     // ─────────────────────────────────────────────────────────────
 
     /**
