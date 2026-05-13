@@ -1,5 +1,7 @@
 package Display;
 
+import Audio.MusicPlayer;
+
 public class RaceArt {
 
     public static void displayKapre() {
@@ -67,6 +69,7 @@ public class RaceArt {
 
     public static void displayTikbalang() {
         // Cyan color for Tikbalang
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.print("\u001B[36m");
 
         // 30 spaces of padding added to match your centered UI
