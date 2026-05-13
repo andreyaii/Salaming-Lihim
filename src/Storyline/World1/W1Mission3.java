@@ -1,5 +1,6 @@
 package Storyline.World1;
 
+import Audio.MusicPlayer;
 import Core.*;
 import Storyline.DialogueUtils;
 
@@ -17,6 +18,7 @@ public class W1Mission3 {
         System.out.println("          ==========================================================================================================================================");
 
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println("Enlightened with the clues from the Information Guild, you hurry to the Dark Forest. Soon, you hear stomping and the sound of creaky wagon wheels turning through the soil.");
         DialogueUtils.pause();
@@ -33,12 +35,20 @@ public class W1Mission3 {
         System.out.println("Just then, a whirl of wind slices the skin of the giant’s arm, causing it to drop the unconscious diwata back on the wagon.");
         System.out.println("Another diwata, the one who summoned the wind, rises, and you step out of hiding and move yourself between the wagon and the group of enemies.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
         System.out.println("Conscious Diwata: Are you here to rescue us?");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
         System.out.println(player.name + ": I am. Wake the others up and head to the city! I’ll stop them.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
         System.out.println("Conscious Diwata: Alright!");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
         System.out.println("[You encountered 3 tiyanaks and a Bungisngis.]\n\n{Only tiyanaks can be targeted}\n{Mini boss can only be targeted after wiping out the henchmen}\n");
         DialogueUtils.pause();
 

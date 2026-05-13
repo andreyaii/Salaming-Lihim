@@ -1,5 +1,6 @@
 package Storyline.World2;
 
+import Audio.MusicPlayer;
 import Core.*;
 import Storyline.DialogueUtils;
 
@@ -18,6 +19,7 @@ public class W2Mission1 {
         System.out.println("                       ================================================================================================================");
 
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println(
                 "You see Andrea heavily injured on the ground, the Bungisngis limping towards her. You rush in to protect her.\n");
@@ -35,14 +37,19 @@ public class W2Mission1 {
 
         System.out.println("Andrea: Finally, you took it down, friend.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println(player.name + ": Andrea, you’re heavily injured.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println(player.name + ": We need to get you treated immediately.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println(player.name + ": It’ll be too late if we go to the city.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println(player.name + ": Stay conscious, I’ll find something to treat you with.");
         scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println("You lay Andrea against a small boulder and search for herbs that could treat her.");
         System.out.println();

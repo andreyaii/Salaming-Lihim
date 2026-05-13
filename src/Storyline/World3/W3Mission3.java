@@ -1,5 +1,6 @@
 package Storyline.World3;
 
+import Audio.MusicPlayer;
 import Core.*;
 import Storyline.DialogueUtils;
 
@@ -19,6 +20,7 @@ public class W3Mission3 {
         System.out.println("             ==================================================================================================================================");
         System.out.println();
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println("Slowly, you descend the stairs, and as you step through the threshold, the world falls silent.\n" +
                 "The air grows cold, thick with the scent of damp soil and iron. The walls are made of the twisting roots of the Balete Tree,\n" +
@@ -27,21 +29,29 @@ public class W3Mission3 {
                 "behind you and bulging ancient eyes open from their slumber as you pass.You realize something as the walls close\n" +
                 "in around you: this place means to swallow you whole.\n");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("At the heart of the maze stands a massive stone door carved with lunar sigils.\n" +
                 "A ghostly figure materializes before you. The White Lady of Balete Drive, her form both sorrowful and radiant.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("White Lady: So you have come for the Blade’s final purpose, but every light demands a shadow.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println(player.name + ": We’ve come this far. Tell us what must be done.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("White Lady: The door only opens to one who understands sacrifice, you must surrender half of what sustains you. Either your life-force or the moon-forged mana that fuels your power.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("Kheila’s voice trembles.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("Kheila: Half? That’s– that’s irreversible.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("White Lady: Strength and magic shape every path you have walked. Choose which burden you will lighten, and which wound you will carry forward.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
         System.out.println("                                             ┃ >> A heavy price must be paid:                                   ┃");
@@ -55,6 +65,7 @@ public class W3Mission3 {
             try {
                 System.out.print("                                                              Enter your choice: ");
                 choice = sc.nextInt();
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
                 if (choice == 1) {
                     player.setHp(player.getHp() / 2);
                     player.boostSpecialPower(20);
@@ -71,17 +82,21 @@ public class W3Mission3 {
             } catch (InputMismatchException e) {
                 System.out.println("                                                         ❌ Invalid input. Please enter 1 or 2.\n");
                 sc.nextLine();
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
             } catch (Exception e) {
                 System.out.println("                                                         ⚠️ An unexpected error occurred: " + e.getMessage());
                 sc.nextLine();
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
             }
         }
 
         System.out.println();
         System.out.println("The Blade of Bulan glows, absorbing the essence of what was sacrificed and locking it into its lunar steel.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("White Lady: You have chosen well. The Blade now mirrors your truth. Go, bearer of the moon’s will.");
         sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("With those parting words, the White Lady disappears, taking every ounce of light with her.");
 
         DialogueUtils.pause();
