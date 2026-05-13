@@ -1,9 +1,9 @@
 package Races;
 
-import Core.Race;
+import Audio.MusicPlayer;
 import Core.Enemy;
+import Core.Race;
 import Display.RaceArt;
-
 import java.util.Random;
 
 public class Tikbalang extends Race {
@@ -26,6 +26,7 @@ public class Tikbalang extends Race {
     }
 
     public int attack() {
+        MusicPlayer.playSFX(MusicPlayer.SFX_HOOF_CHARGE);
         return random.nextInt(11) + 5;
     }
 
@@ -34,6 +35,8 @@ public class Tikbalang extends Race {
     }
 
     public void useSkill(String playerName, Enemy target) {
+        MusicPlayer.playSFX(MusicPlayer.SFX_TRIPLE_STAB);
+
         System.out.println(playerName + " uses Three-strike Stab!");
         int dmg = random.nextInt(11) + 15;
         int netDmg = Math.max(1, dmg - target.defense);
@@ -42,6 +45,8 @@ public class Tikbalang extends Race {
     }
 
     public void useSpecial(String playerName, Enemy target) {
+        MusicPlayer.playSFX(MusicPlayer.SFX_TRANSCEND);
+
         System.out.println(playerName + " Transcends! A thunderous hoof-stab deals massive damage!");
         int dmg = random.nextInt(31) + 25 + specialBonusDamage;
         int netDmg = Math.max(1, dmg - target.defense);
@@ -61,3 +66,4 @@ public class Tikbalang extends Race {
         RaceArt.displayTikbalang();
     }
 }
+ 

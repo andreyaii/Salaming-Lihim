@@ -1,5 +1,6 @@
 package Storyline;
 
+import Audio.MusicPlayer;
 import java.util.Scanner;
 
 public class DialogueUtils {
@@ -9,6 +10,9 @@ public class DialogueUtils {
         try {
             System.out.println(">> Press ENTER to continue...");
             scanner.nextLine();
+
+            MusicPlayer.playSFX(MusicPlayer.CLICK); /// ADD THIS LINE FOR CLICK SOUND EVERY ENTER
+
         } catch (Exception e) {
             System.out.println("⚠️ Input error. Skipping pause.");
         }
