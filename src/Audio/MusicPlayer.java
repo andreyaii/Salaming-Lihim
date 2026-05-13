@@ -29,6 +29,18 @@ public class MusicPlayer {
     public static final String GAME_OVER = "Background - Defeat - Game Over.wav";
     public static final String SFX_HEAL = "SFX - HEAL.wav";
     public static final String SFX_MANA = "SFX - MANA.wav";
+    public static final String SFX_DUWENDE = "SFX - Goblin Throw.wav";
+    public static final String SFX_DUWENDE_DEATH = "SFX - Duwende Death.wav";
+    public static final String SFX_TIYANAK = "SFX - Creepy Baby Monster.wav";
+    public static final String SFX_BUNGISNGIS = "SFX - Ogre Smash.wav";
+    public static final String SFX_ASWANG = "SFX - Vampire Claw Attack.wav";
+    public static final String SFX_SIGBIN = "SFX - Hellhound Bite.wav";
+    public static final String SFX_TIKTIK = "SFX - Tongue Lash Monster.wav";
+    public static final String SFX_ABWAK = "SFX - Crow Monster Screech.wav";
+    public static final String SFX_BABAYLAN = "SFX - Dark Spell Cast.wav";
+    public static final String SFX_HUMAN = "SFX - Gunshot.wav";
+    public static final String SFX_TRIA = "SFX - Knife Throw.wav";
+    public static final String SFX_ERIKA = "SFX - Dark Queen Boss Attack.wav";
     // ─────────────────────────────────────────────────────────────
 
     /**

@@ -1,6 +1,7 @@
 package Core;
 
 import java.util.Random;
+import Audio.MusicPlayer;
 
 public class Enemy {
 
@@ -20,6 +21,8 @@ public class Enemy {
     }
 
     public int dealDamage(PlayerCharacter target) {
+        MusicPlayer.playSFX(type.sfxFile);
+
         System.out.println(name + " " + type.attackDescription + "!");
         int rawDamage = new Random().nextInt(type.maxDamage - type.minDamage + 1) + type.minDamage;
         int netDamage = Math.max(1, rawDamage - target.getDefense());
