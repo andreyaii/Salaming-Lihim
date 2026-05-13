@@ -3,6 +3,7 @@ package Races;
 import Core.Race;
 import Core.Enemy;
 import Display.RaceArt;
+import Audio.MusicPlayer;
 
 import java.util.Random;
 
@@ -24,6 +25,7 @@ public class Kapre extends Race {
     public String getRaceName() { return "Kapre"; }
 
     public int attack() {
+        MusicPlayer.playSFX(MusicPlayer.SFX_KAPRE_ATTACK);
         return random.nextInt(11) + 5;
     }
 
@@ -32,6 +34,8 @@ public class Kapre extends Race {
     }
 
     public void useSkill(String playerName, Enemy target) {
+        MusicPlayer.playSFX(MusicPlayer.SFX_SMOKE_CLOUD);
+
         System.out.println(playerName + " exhales a massive Smoke Cloud!");
         int dmg = random.nextInt(11) + 15;
         int netDmg = Math.max(1, dmg - target.defense);
@@ -40,6 +44,8 @@ public class Kapre extends Race {
     }
 
     public void useSpecial(String playerName, Enemy target) {
+        MusicPlayer.playSFX(MusicPlayer.SFX_CINDER_BLAST);
+
         System.out.println(playerName + " unleashes the Cinder Blast!");
         int dmg = random.nextInt(31) + 25 + heatPowerBonus;
         int netDmg = Math.max(1, dmg - target.defense);
