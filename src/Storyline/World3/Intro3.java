@@ -5,7 +5,7 @@ import Audio.MusicPlayer;
 
 public class Intro3 {
     public static void intro3 () {
-        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
+        MusicPlayer.play(MusicPlayer.INTRO3, true);
 
         System.out.println("   ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ ");
         System.out.println("   ║      ▲        ▲  .        ▪        .     ▲▲▲     .        ▪    .       .           ▪             .     ▪          ▪         ▲▲▲                ▲      ║ ");
