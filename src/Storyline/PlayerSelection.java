@@ -2,6 +2,7 @@ package Storyline;
 
 import Core.*;
 import Display.RaceArt;
+import Audio.MusicPlayer;
 
 import java.util.*;
 
@@ -33,6 +34,7 @@ public class PlayerSelection {
         System.out.print("\u001B[0m");
 
         scanner.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
         DialogueUtils.pause();
 
         while (true) {
@@ -51,6 +53,7 @@ public class PlayerSelection {
                 }
                 System.out.print("                                                                  You've chosen: ");
                 raceChoice = Integer.parseInt(scanner.nextLine());
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
                 System.out.println();
                 if (!races.containsKey(raceChoice)) throw new Exception();
                 break;
@@ -64,6 +67,7 @@ public class PlayerSelection {
             try {
                 System.out.print("                                                           Enter your character name: ");
                 name = scanner.nextLine().trim();
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
                 if (name.isEmpty()) throw new Exception();
                 break;
             } catch (Exception e) {
@@ -82,6 +86,8 @@ public class PlayerSelection {
                 choice = scanner.nextInt();
                 scanner.nextLine();
 
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
+
                 if (choice == 1) {
                     break;
                 } else if (choice == 0) {
@@ -91,6 +97,7 @@ public class PlayerSelection {
                             System.out.print("                                                           Enter your character name: ");
                             name = scanner.nextLine().trim();
                             if (name.isEmpty()) throw new Exception();
+                            MusicPlayer.playSFX(MusicPlayer.CLICK);
                             break;
                         } catch (Exception e) {
                             System.out.println("                                                           ⚠️ Name cannot be empty. Try again.\n");
@@ -103,6 +110,8 @@ public class PlayerSelection {
             } catch (java.util.InputMismatchException e) {
                 System.out.println("                                                   ⚠️ Invalid input. Please enter a number (1 or 0).\n");
                 scanner.nextLine();
+
+                MusicPlayer.playSFX(MusicPlayer.CLICK);
             }
         }
 
