@@ -111,6 +111,7 @@ public class BattleManager {
                 MusicPlayer.stop(); // ← ADDED
 
                 if (currentWorld == 1) {
+                    MusicPlayer.play(MusicPlayer.GAME_OVER, false);
                     System.out.println("\n☠️ You were defeated in your first mission...");
                     System.out.println("🔚 GAME OVER");
                     System.exit(0);
