@@ -1,5 +1,6 @@
 package Core;
 
+import Audio.MusicPlayer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,11 +142,13 @@ public class PlayerCharacter {
     public void useItem(Item item) {
         switch (item.getName()) {
             case "Health Potion":
+                MusicPlayer.playSFX(MusicPlayer.SFX_HEAL);
                 setHp(maxHp);
                 inventory.remove(item);
                 System.out.println("\n🧪 You used a Health Potion -- the elixir of life! HP fully restored.\n");
                 break;
             case "Mana Potion":
+                MusicPlayer.playSFX(MusicPlayer.SFX_MANA);
                 mana = maxMana;
                 inventory.remove(item);
                 System.out.println("\n🔮 You used a Mana Potion -- the elixir of power! Mana fully restored.\n");
