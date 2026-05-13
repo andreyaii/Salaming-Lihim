@@ -48,6 +48,7 @@ public class BattleManager {
                 try {
                     System.out.print("🎯 Choose target index: ");
                     targetIndex = scanner.nextInt();
+                    MusicPlayer.playSFX(MusicPlayer.CLICK);
                     if (targetIndex < 0 || targetIndex >= enemies.size()) {
                         System.out.println("Invalid target. Try again.");
                         continue;
@@ -60,6 +61,7 @@ public class BattleManager {
                 } catch (InputMismatchException e) {
                     System.out.println("Please input a valid index.");
                     scanner.nextLine();
+                    MusicPlayer.playSFX(MusicPlayer.CLICK);
                 }
             }
 
@@ -68,12 +70,13 @@ public class BattleManager {
             boolean validInput = false;
 
             while (!validInput) {
-                System.out.println("\n┏━━⚡ Actions:━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-                System.out.println("┃ [1] Basic Attack                      ┃");
-                System.out.println("┃ [2] Skill                             ┃");
-                System.out.println("┃ [3] Special Skill                     ┃");
-                System.out.println("┃ [4] Use Item                          ┃");
-                System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+                System.out.println("\n┏━━⚡Actions:━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+                System.out.println("┃ [1] Basic Attack                            ┃");
+                System.out.println("┃ [2] Skill                (" + player.getRaceType().getSkillManaCost() + "MP)             ┃");
+                System.out.println("┃ [3] Special Skill        ("+ player.getRaceType().getSpecialManaCost() + "MP)             ┃");
+                System.out.println("┃ [4] Use Item                                ┃");
+                System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+
                 try {
                     System.out.print("\n>> Choose action: ");
                     action = scanner.nextInt();

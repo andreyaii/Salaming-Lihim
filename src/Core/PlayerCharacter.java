@@ -34,6 +34,10 @@ public class PlayerCharacter {
         this.level = 1;
     }
 
+    public Race getRaceType() {
+        return raceType;
+    }
+
     public int getLevel() {
         return level;
     }
