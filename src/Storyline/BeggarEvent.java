@@ -25,7 +25,6 @@ public class BeggarEvent {
 
         int dialogType;
         if (!introducedBefore) {
-
             System.out.println("\n\nA faint voice echoes in the darkness...\n");
             sc.nextLine();
 
