@@ -68,8 +68,8 @@ public class BattleManager {
             System.out.println("\n👹 ENEMIES");
             for (int i = 0; i < enemies.size(); i++) {
                 Enemy e = enemies.get(i);
-                System.out.printf("[%d] %s  HP %s\n", i, e.name,
-                        bar(e.hp, 150, "█", "░"));
+                System.out.printf("[%d] %-20s  HP %s\n", i, e.name,
+                        bar(e.hp, 150, "█", "░")); //System.out.printf("[%d] %-20s  HP %s\n", i, e.name,bar(e.hp, 150, "█", "░"));
             }
 
             int targetIndex;
