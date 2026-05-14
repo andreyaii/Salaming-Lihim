@@ -2,9 +2,11 @@ package Core;
 
 import Audio.MusicPlayer;
 import Display.ConsoleColors;
+import Display.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PlayerCharacter {
     public String name, race;
@@ -54,6 +56,15 @@ public class PlayerCharacter {
         int netDamage = Math.max(1, rawDamage - target.defense);
         target.hp -= netDamage;
         System.out.println(ConsoleColors.CYAN + name + " deals " + netDamage + " damage to " + target.name + "!" + ConsoleColors.RESET);
+
+        System.out.println(name + " " + raceType.getAttackDesc()); //
+
+        Random rand = new Random();
+        if (rand.nextInt(100) < 15) {
+            rawDamage *= 2;
+            DisplayUtils.printCriticalBanner();
+            System.out.println("✨ A MASSIVE BLOW! Critical hit deals double damage! ✨");
+        }
     }
 
     public void useSkill(Enemy target) {
