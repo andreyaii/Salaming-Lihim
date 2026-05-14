@@ -53,7 +53,6 @@ public class BeggarEvent {
             System.out.println(ConsoleColors.GREEN + "Sir Khai: Tsk. You again?");
             System.out.println(ConsoleColors.GREEN + "Sir Khai: Kid, you really gotta stop dying everywhere.\n");
             sc.nextLine();
-
             System.out.println(ConsoleColors.GREEN + "Sir Khai: Anyway... I dragged you somewhere safe. Again.\n");
             sc.nextLine();
 
