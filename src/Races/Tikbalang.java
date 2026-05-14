@@ -33,7 +33,7 @@ public class Tikbalang extends Race {
 
     public String getAttackDesc() {
         // Reverted to default text
-        return " charges with thunderous hooves!";
+        return "charges with thunderous hooves!";
     }
 
     public void useSkill(String playerName, Enemy target) {
