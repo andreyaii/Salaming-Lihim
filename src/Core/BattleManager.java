@@ -1,6 +1,7 @@
 package Core;
 
 import Audio.MusicPlayer;
+import Display.ConsoleColors;
 import Storyline.BeggarEvent;
 import java.util.*;
 
@@ -25,16 +26,16 @@ public class BattleManager {
         try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
         MusicPlayer.play(MusicPlayer.BATTLE, true);
 
-        System.out.println("                                                      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-        System.out.println("                                                      █              ⚔ ️ Battle Begins!             █");
-        System.out.println("                                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+        System.out.println(ConsoleColors.YELLOW + "                                                      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                                      █              ⚔ ️ Battle Begins!             █"+ ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
 
         while (player.isAlive() && !enemies.isEmpty()) {
 
             System.out.println("\n                                                       ┏━PLAYER STATUS───────────────────────────━┓");
-            System.out.println("                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░"));
-            System.out.println("                                                         Mana " + bar(player.getMana(), player.maxMana, "▓", "░"));
-            System.out.println("                                                       ┗━────────────────────────────────────────━┛");
+            System.out.println(ConsoleColors.RED + "                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░" + ConsoleColors.RESET));
+            System.out.println(ConsoleColors.BLUE + "                                                         Mana " + bar(player.getMana(), player.maxMana, "▓", "░"+ ConsoleColors.RESET));
+            System.out.println(ConsoleColors.RESET + "                                                       ┗━────────────────────────────────────────━┛");
 
             System.out.println("\n👹 ENEMIES");
             for (int i = 0; i < enemies.size(); i++) {

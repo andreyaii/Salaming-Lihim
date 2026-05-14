@@ -3,6 +3,7 @@ package Races;
 import Audio.MusicPlayer;
 import Core.Enemy;
 import Core.Race;
+import Display.ConsoleColors;
 import Display.RaceArt;
 import java.util.Random;
 
@@ -31,31 +32,40 @@ public class Tikbalang extends Race {
     }
 
     public String getAttackDesc() {
+        // Reverted to default text
         return " charges with thunderous hooves!";
     }
 
     public void useSkill(String playerName, Enemy target) {
         MusicPlayer.playSFX(MusicPlayer.SFX_TRIPLE_STAB);
 
+        // Announcement line is now default
         System.out.println(playerName + " uses Three-strike Stab!");
+
         int dmg = random.nextInt(11) + 15;
         int netDmg = Math.max(1, dmg - target.defense);
         target.hp -= netDmg;
-        System.out.println(playerName + " deals " + netDmg + " piercing damage to " + target.name + "!");
+
+        // Only the damage line remains Cyan
+        System.out.println(ConsoleColors.CYAN + playerName + " deals " + netDmg + " piercing damage to " + target.name + "!" + ConsoleColors.RESET);
     }
 
     public void useSpecial(String playerName, Enemy target) {
         MusicPlayer.playSFX(MusicPlayer.SFX_TRANSCEND);
 
+        // Announcement line is now default
         System.out.println(playerName + " Transcends! A thunderous hoof-stab deals massive damage!");
+
         int dmg = random.nextInt(31) + 25 + specialBonusDamage;
         int netDmg = Math.max(1, dmg - target.defense);
         target.hp -= netDmg;
-        System.out.println(playerName + " deals " + netDmg + " piercing damage to " + target.name + "!");
+
+        // Only the damage line remains Cyan
+        System.out.println(ConsoleColors.CYAN + playerName + " deals " + netDmg + " piercing damage to " + target.name + "!" + ConsoleColors.RESET);
     }
 
-    public int getSkillManaCost()   { return 30; } // increased from 20
-    public int getSpecialManaCost() { return 60; } // increased from 40
+    public int getSkillManaCost()   { return 30; }
+    public int getSpecialManaCost() { return 60; }
 
     public void increaseSpecialDamage(int amount) {
         this.specialBonusDamage += amount;
@@ -66,4 +76,3 @@ public class Tikbalang extends Race {
         RaceArt.displayTikbalang();
     }
 }
- 

@@ -25,6 +25,7 @@ public class Main {
         Shop.enterShop(player);
         if (!W2Mission3.w2mission3(player)) return;
         Shop.enterShop(player);
+
         W2Mission4.w2mission4(player);
         Shop.enterShop(player);
         if (!W2Mission5.w2mission5(player)) return;

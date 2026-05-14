@@ -2,6 +2,7 @@ package Storyline.World2;
 
 import Audio.MusicPlayer;
 import Core.*;
+import Display.ConsoleColors;
 import Storyline.DialogueUtils;
 
 import java.util.List;
@@ -12,17 +13,16 @@ public class W2Mission1 {
         Scanner scan = new Scanner(System.in);
 
         System.out.println();
-        System.out.println("                       ================================================================================================================");
+        System.out.println(ConsoleColors.BOLD_BLUE + "                       ================================================================================================================");
         System.out.println("                       ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀█░░░░░░░░▀█▀░█░█░█▀▀░░░█░░░█▀█░█▀▀░▀█▀░░░█░░░█▀█░█░█░█▀▀░█░█░░░░▄▀░░▄▀");
         System.out.println("                       ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░█░░░▀░░░░░█░░█▀█░█▀▀░░░█░░░█▀█░▀▀█░░█░░░░█░░░█▀█░█░█░█░█░█▀█░░░▀▄░░▀▄░");
         System.out.println("                       ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░▀░░▀░▀░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░░░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀░░░░░▀░░░▀");
-        System.out.println("                       ================================================================================================================");
+        System.out.println("                       ================================================================================================================" + ConsoleColors.RESET);
 
         scan.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(
-                "You see Andrea heavily injured on the ground, the Bungisngis limping towards her. You rush in to protect her.\n");
+        System.out.println(ConsoleColors.YELLOW + "You see Andrea heavily injured on the ground, the Bungisngis limping towards her. You rush in to protect her.\n" + ConsoleColors.RESET);
         DialogueUtils.pause();
 
         List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.BUNGISNGIS2, 1);
@@ -35,24 +35,32 @@ public class W2Mission1 {
 
         player.resetCooldowns();
 
-        System.out.println("Andrea: Finally, you took it down, friend.");
-        scan.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": Andrea, you’re heavily injured.");
-        scan.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": We need to get you treated immediately.");
-        scan.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": It’ll be too late if we go to the city.");
-        scan.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": Stay conscious, I’ll find something to treat you with.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.GREEN + "Andrea: Finally, you took it down, friend." + ConsoleColors.RESET);
         scan.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("You lay Andrea against a small boulder and search for herbs that could treat her.");
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": Andrea, you’re heavily injured." + ConsoleColors.RESET);
+        scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        System.out.println(ConsoleColors.CYAN + player.name + ": We need to get you treated immediately." + ConsoleColors.RESET);
+        scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        System.out.println(ConsoleColors.CYAN + player.name + ": It’ll be too late if we go to the city." + ConsoleColors.RESET);
+        scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        System.out.println(ConsoleColors.CYAN + player.name + ": Stay conscious, I’ll find something to treat you with." + ConsoleColors.RESET);
+        scan.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        // --- YOU NARRATION (YELLOW) ---
+        System.out.println(ConsoleColors.YELLOW + "You lay Andrea against a small boulder and search for herbs that could treat her." + ConsoleColors.RESET);
         System.out.println();
+
         DialogueUtils.pause();
         return true;
     }

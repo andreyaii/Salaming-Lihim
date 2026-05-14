@@ -1,6 +1,8 @@
 package Core;
 
 import Audio.MusicPlayer;
+import Display.ConsoleColors;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +53,7 @@ public class PlayerCharacter {
         int rawDamage = raceType.attack();
         int netDamage = Math.max(1, rawDamage - target.defense);
         target.hp -= netDamage;
-        System.out.println(name + " deals " + netDamage + " damage to " + target.name + "!");
+        System.out.println(ConsoleColors.CYAN + name + " deals " + netDamage + " damage to " + target.name + "!" + ConsoleColors.RESET);
     }
 
     public void useSkill(Enemy target) {
@@ -237,10 +239,19 @@ public class PlayerCharacter {
     public void rest() {
         setHp(maxHp);
         setMana(maxMana);
-        System.out.println(name + " was able to get some rest.");
-        System.out.println("Health and Mana recovered to full!");
+
+
         System.out.println();
+        System.out.println(ConsoleColors.YELLOW + "                                                        ════════════════════════════════════════════════" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                                               " + name + " was able to get some rest..." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                                        ════════════════════════════════════════════════" + ConsoleColors.RESET);
+        System.out.println("                                                           💖  Health restored to full!" + ConsoleColors.RESET);
+        System.out.println("                                                           🔮  Mana restored to full!" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                                        ════════════════════════════════════════════════" + ConsoleColors.RESET);
+
     }
+
+
 
     public void levelUp() {
         level++;

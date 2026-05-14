@@ -2,6 +2,7 @@ package Races;
 
 import Core.Race;
 import Core.Enemy;
+import Display.ConsoleColors;
 import Display.RaceArt;
 import Audio.MusicPlayer;
 
@@ -30,6 +31,7 @@ public class Kapre extends Race {
     }
 
     public String getAttackDesc() {
+        // Removed Cyan from here to keep it default
         return " engulfs the enemy with thick cigar smoke!";
     }
 
@@ -40,7 +42,8 @@ public class Kapre extends Race {
         int dmg = random.nextInt(11) + 15;
         int netDmg = Math.max(1, dmg - target.defense);
         target.hp -= netDmg;
-        System.out.println(playerName + " deals " + netDmg + " suffocation damage to " + target.name + "!");
+        // This line shows the damage, so it stays Cyan
+        System.out.println(ConsoleColors.CYAN + playerName + " deals " + netDmg + " suffocation damage to " + target.name + "!" + ConsoleColors.RESET);
     }
 
     public void useSpecial(String playerName, Enemy target) {
@@ -50,11 +53,12 @@ public class Kapre extends Race {
         int dmg = random.nextInt(31) + 25 + heatPowerBonus;
         int netDmg = Math.max(1, dmg - target.defense);
         target.hp -= netDmg;
-        System.out.println(playerName + " deals " + netDmg + " thermal damage to " + target.name + "!");
+        // This line shows the damage, so it stays Cyan
+        System.out.println(ConsoleColors.CYAN + playerName + " deals " + netDmg + " thermal damage to " + target.name + "!" + ConsoleColors.RESET);
     }
 
-    public int getSkillManaCost()   { return 30; } // increased from 20
-    public int getSpecialManaCost() { return 60; } // increased from 40
+    public int getSkillManaCost()   { return 30; }
+    public int getSpecialManaCost() { return 60; }
 
     public void increaseSpecialDamage(int amount) { this.heatPowerBonus += amount; }
 
