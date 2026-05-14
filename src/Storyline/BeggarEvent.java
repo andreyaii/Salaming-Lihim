@@ -1,6 +1,7 @@
 package Storyline;
 
 import Core.PlayerCharacter;
+import Audio.MusicPlayer;
 import Display.ConsoleColors;
 import Storyline.World1.W1Mission2;
 
@@ -21,6 +22,8 @@ public class BeggarEvent {
         if (currentWorld == 3 && triggeredInWorld3) {
             return 0;
         }
+
+        MusicPlayer.play(MusicPlayer.SHOP, true);
 
 
         int dialogType;
@@ -77,6 +80,7 @@ public class BeggarEvent {
         DialogueUtils.pause();
 
 
+        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
 
         if(currentWorld == 3) triggeredInWorld3 = true;
 
