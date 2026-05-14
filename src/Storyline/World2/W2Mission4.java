@@ -2,6 +2,7 @@ package Storyline.World2;
 
 import Audio.MusicPlayer;
 import Core.PlayerCharacter;
+import Display.ConsoleColors;
 import Storyline.DialogueUtils;
 
 import java.util.Scanner;
@@ -11,29 +12,35 @@ public class W2Mission4 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println();
-        System.out.println("======================================================================================================================================================================");
+        // --- WORLD TITLE CARD (RED) ---
+        System.out.println(ConsoleColors.BOLD_BLUE + "======================================================================================================================================================================");
         System.out.println("░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░█░█░░░░░░░█▀█░░░█▀▀░█░█░█▀▄░▀█▀░█▀█░█▀▀░░░█▀█░█▀▀░░░█▀▀░█▀█░▀█▀░█▀▄░█▀█░▀█▀░█░░░█▀▀░░░█▀█░█▀█░█▀▄░░░█▀▄░█▀█░█▀█░█▀▀░░░░▄▀░░▄▀");
         System.out.println("░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░▀█░░▀░░░░█▀█░░░▀▀█░█▀█░█▀▄░░█░░█░█░█▀▀░░░█░█░█▀▀░░░█▀▀░█░█░░█░░█▀▄░█▀█░░█░░█░░░▀▀█░░░█▀█░█░█░█░█░░░█▀▄░█░█░█░█░█▀▀░░░▀▄░░▀▄░");
         System.out.println("░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░░░▀░░▀░░░░▀░▀░░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░░░░░▀▀▀░▀░▀░░▀░░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░▀░▀░▀░▀░▀▀░░░░▀▀░░▀▀▀░▀░▀░▀▀▀░░░░░▀░░░▀");
-        System.out.println("======================================================================================================================================================================");
+        System.out.println("======================================================================================================================================================================" + ConsoleColors.RESET);
         System.out.println();
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("You make your way back to Andrea and the Tambalan.\nThough pale, Andrea’s eyes open the moment she hears your footsteps.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("Andrea: You’re back. Did you find it?");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.GREEN + "Andrea: You’re back. Did you find it?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("You kneel and present the Pandai’s creation.\nAndrea’s hand trembles as she reaches for it, but the moment her fingers curl around the hilt,\nthe blade glows brightly in the darkness.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("Tambalan: Good. The sword knows its master.\nYou must go now, but listen well. Find the Aswang’s lair by following the signs of their gluttony.\nBeware their trickery, for the farther away they sound, the closer they actually are.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.GREEN + "Tambalan: Good. The sword knows its master.\nYou must go now, but listen well. Find the Aswang’s lair by following the signs of their gluttony.\nBeware their trickery, for the farther away they sound, the closer they actually are." + ConsoleColors.RESET);
         System.out.println();
         DialogueUtils.pause();
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("With those parting words from the Tambalan, you and Andrea make your way out to the hostile wilds of Mogul.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
@@ -42,15 +49,18 @@ public class W2Mission4 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(player.name + ": \"The blessed bolo will lead the way.\". Come on, let's get going.");
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": \"The blessed bolo will lead the way.\". Come on, let's get going." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("After a few more steps, you look up to see a towering structure made of bones, sinew, and dried blood.\nAll around you, there are hundreds of these same structures, festooned with glistening entrails\nlike a perverted shrine created to worship everything unholy that ever walked this land. ");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("A sick feeling washes over you as you and Andrea come to the same conclusion- you've made it to the Aswang’s lair.");
+        // --- ENCOUNTER / LOCATION DISCOVERY (YELLOW) ---
+        System.out.println(ConsoleColors.YELLOW + "A sick feeling washes over you as you and Andrea come to the same conclusion- you've made it to the Aswang’s lair." + ConsoleColors.RESET);
         sc.nextLine();
         DialogueUtils.pause();
     }

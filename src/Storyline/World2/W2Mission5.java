@@ -2,6 +2,7 @@ package Storyline.World2;
 
 import Audio.MusicPlayer;
 import Core.*;
+import Display.ConsoleColors;
 import Storyline.DialogueUtils;
 
 import java.util.List;
@@ -12,13 +13,15 @@ public class W2Mission5 {
         Scanner sc = new Scanner(System.in);
         System.out.println();
 
-        System.out.println("    ======================================================================================================================================================");
+        // --- WORLD TITLE CARD (RED) ---
+        System.out.println(ConsoleColors.BOLD_BLUE + "    ======================================================================================================================================================");
         System.out.println("    ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░█▀▀░░░░░░░░░▀█▀░█░█░█▀▀░░░█▄█░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█▀▄░▀░█▀▀░░░█▀▀░█▀█░█▀█░▀█▀░█▀█░█▀▀░░░█▄█░█▀█░█░█░░░░▄▀░░▄▀");
         System.out.println("    ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░▀▀▄░░▀░░░░░░░█░░█▀█░█▀▀░░░█░█░█░█░█░█░▀▀█░░█░░█▀▀░█▀▄░░░▀▀█░░░█░█░█▀█░█▀▀░░█░░█░█░█░█░░░█░█░█▀█░█▄█░░░▀▄░░▀▄░");
         System.out.println("    ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀░░░▀░░░░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀░▀░░░▀▀▀░░░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░▀▀▀░░░▀░▀░▀░▀░▀░▀░░░░░▀░░░▀");
-        System.out.println("    ======================================================================================================================================================");
+        System.out.println("    ======================================================================================================================================================" + ConsoleColors.RESET);
         System.out.println();
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("The chamber opens wide before you like a cavernous maw, a cathedral of decay..");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
@@ -31,10 +34,12 @@ public class W2Mission5 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("???: Have you come to be my supper? Quite idiotic of you… But well, I don’t mind.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.RED + "???: Have you come to be my supper? Quite idiotic of you… But well, I don’t mind." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("The voice is followed by a wet, insectoid chitter and a soft, mocking laugh.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
@@ -47,27 +52,35 @@ public class W2Mission5 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(player.name + ": Who are you? Are you the leader of the Aswangs?");
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": Who are you? Are you the leader of the Aswangs?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("???: You don’t know who I am? Truly an idiot.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.RED + "???: You don’t know who I am? Truly an idiot." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(player.name + ": Am I supposed to?");
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": Am I supposed to?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("???: I am Tria, the Master of Mogul! I am feared in these lands! And you, my dear, you should be terrified. Henchmen! Tear them apart!");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.RED + "???: I am Tria, the Master of Mogul! I am feared in these lands! And you, my dear, you should be terrified. Henchmen! Tear them apart!" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
+        // --- NARRATION (DEFAULT) ---
         System.out.println("From the shadows of the chamber, shapes crawl and emerge. Seven of Tria’s minions, made up of different Aswang species, respond to their leader’s command.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("[You encountered 6 henchmen of Tria. 2 Tiktiks, 2 Abwak, 2 Aswang. Choose a target and an attack]\n{Boss cannot be chosen until henchmen are wiped out}\n");
+        // --- ENCOUNTER (YELLOW) ---
+        System.out.println(ConsoleColors.YELLOW + "[You encountered 6 henchmen of Tria. 2 Tiktiks, 2 Abwak, 2 Aswang. Choose a target and an attack]");
+        System.out.println("{Boss cannot be chosen until henchmen are wiped out}" + ConsoleColors.RESET);
+        System.out.println();
         DialogueUtils.pause();
 
         List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIKTIK, 2);
@@ -75,63 +88,74 @@ public class W2Mission5 {
         List<Enemy> enemies3 = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
         List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.TRIA, 1);
         BattleManager battle = new BattleManager();
+
         boolean survived = battle.startBattle(player, enemies, 2, false);
-        if (!survived) {
-            return false;
-        }
+        if (!survived) return false;
 
         survived = battle.startBattle(player, enemies2, 2, false);
+        if (!survived) return false;
 
-        if (!survived) {
-            return false;
-        }
         survived = battle.startBattle(player, enemies3, 2, false);
+        if (!survived) return false;
 
-        if (!survived) {
-            return false;
-        }
-
-        System.out.println("Hah! You're quite capable. But you do not hold even a candle to my strength.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.RED + "Tria: Hah! You're quite capable. But you do not hold even a candle to my strength." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println("[You are facing Tria, the Master of Mogul. Choose an attack]");
+
+        // --- ENCOUNTER (YELLOW) ---
+        System.out.println(ConsoleColors.YELLOW + "[You are facing Tria, the Master of Mogul. Choose an attack]" + ConsoleColors.RESET);
+
         survived = battle.startBattle(player, bosses, 2, true);
-        if (!survived) {
-            return false;
-        }
+        if (!survived) return false;
 
         player.resetCooldowns();
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-
-        System.out.println("Tria: I… lost? I… I can’t believe you defeated me… But you… You won’t get far. The Babaylan’s plan is already halfway.");
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.RED + "Tria: I… lost? I… I can’t believe you defeated me… But you… You won’t get far. The Babaylan’s plan is already halfway." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(player.name + ": The Babaylan? What are you talking about?");
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": The Babaylan? What are you talking about?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        // --- NARRATION (DEFAULT) ---
         System.out.println("Leaving you with more questions, Tria draws her last breath.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
+
         System.out.println("You ponder upon the clue Tria left, the possible mastermind behind the plan to dominate Biringan City.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println("Andrea: Should we investigate the Babaylans? Their base is in Mt. Kanatuan.");
+
+        // --- NPC DIALOGUE (GREEN) ---
+        System.out.println(ConsoleColors.GREEN + "Andrea: Should we investigate the Babaylans? Their base is in Mt. Kanatuan." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": I think we should. Even if Tria lied, this is our only clue.");
+
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": I think we should. Even if Tria lied, this is our only clue." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        // --- NARRATION (DEFAULT) ---
         System.out.println("You make your way towards the end of the tunnel, and the night air lingers thick\nand cold as you emerge into another realm just beyond Mogul.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println(player.name + ": Where are we?");
+
+        // --- PLAYER DIALOGUE (CYAN) ---
+        System.out.println(ConsoleColors.CYAN + player.name + ": Where are we?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        // --- NARRATION (DEFAULT) ---
         System.out.println("The path ahead stretches into darkness once more. But somewhere beyond it lies Mt. Kanatuan. And with it, the truth behind the Babaylan’s sinister plan.");
         System.out.println();
+
         DialogueUtils.pause();
 
         return true;
