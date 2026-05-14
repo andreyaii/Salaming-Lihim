@@ -11,11 +11,39 @@ public class BattleManager {
     private String bar(int current, int max, String fillChar, String emptyChar) {
         int length = 20;
         int filled = max > 0 ? (int) ((double) current / max * length) : 0;
-        StringBuilder b = new StringBuilder("[");
+
+        double healthPercentage = (double) current / max;
+        String color;
+
+        if (healthPercentage <= 0.25) {
+            color = ConsoleColors.RED;    // Critical health (25% or less)
+        } else if (healthPercentage <= 0.50) {
+            color = ConsoleColors.YELLOW; // Warning health (50% or less)
+        } else {
+            color = ConsoleColors.GREEN;  // Healthy
+        }
+
+        StringBuilder b = new StringBuilder(color + "["); // Start with color
         for (int i = 0; i < length; i++) {
             b.append(i < filled ? fillChar : emptyChar);
         }
-        b.append("] ").append(current).append("/").append(max);
+        b.append("] ").append(current).append("/").append(max).append(ConsoleColors.RESET);
+
+        return b.toString();
+    }
+
+    private String manaBar(int current, int max, String fillChar, String emptyChar) {
+        int length = 20;
+        int filled = max > 0 ? (int) ((double) current / max * length) : 0;
+
+        String color = ConsoleColors.BLUE;
+
+        StringBuilder b = new StringBuilder(color + "["); // Start with blue
+        for (int i = 0; i < length; i++) {
+            b.append(i < filled ? fillChar : emptyChar);
+        }
+        b.append("] ").append(current).append("/").append(max).append(ConsoleColors.RESET);
+
         return b.toString();
     }
 
@@ -33,8 +61,8 @@ public class BattleManager {
         while (player.isAlive() && !enemies.isEmpty()) {
 
             System.out.println("\n                                                       ┏━PLAYER STATUS───────────────────────────━┓");
-            System.out.println(ConsoleColors.RED + "                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░" + ConsoleColors.RESET));
-            System.out.println(ConsoleColors.BLUE + "                                                         Mana " + bar(player.getMana(), player.maxMana, "▓", "░"+ ConsoleColors.RESET));
+            System.out.println("                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░" + ConsoleColors.RESET));
+            System.out.println(ConsoleColors.BLUE + "                                                         Mana " + manaBar(player.getMana(), player.maxMana, "▓", "░"+ ConsoleColors.RESET));
             System.out.println(ConsoleColors.RESET + "                                                       ┗━────────────────────────────────────────━┛");
 
             System.out.println("\n👹 ENEMIES");
