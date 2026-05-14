@@ -35,7 +35,7 @@ public class W3Mission4 {
 
         List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.ERIKA, 1);
         List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.ERIKA2, 2);
-        List<Enemy> enemies1 = EnemyFactory.spawnEnemies(EnemyType.HUMANS, 2);
+        //List<Enemy> enemies1 = EnemyFactory.spawnEnemies(EnemyType.HUMANS, 2);
         List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies2, 3, true);
@@ -45,50 +45,48 @@ public class W3Mission4 {
         }
         player.resetCooldowns();
 
-        System.out.println("The last Babaylan crouches in defeat. She looks up at Kheila weakly but with a resentful glare.");
+        System.out.println("The last Babaylan crouches in defeat. She looks up at Kheila with a resentful glare.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.RED + "Babaylan: Traitor! We’ll never forgive you! Mistress Erika will never forgive you! She trusted you above all! You…" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.RED + "Babaylan: Traitor! Mistress Erika trusted you above all! You…" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         System.out.println("The Babaylan coughs out blood and collapses without finishing her last words.\n" +
-                "Kheila looks at the Babaylan with mixed emotions, but one emotion rises among them… guilt. Both you and Andrea notice this.");
+                "Andrea notices the guilt in Kheila's eyes.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(ConsoleColors.GREEN + "Andrea: Don’t listen to her, Kheila! You’re doing the right thing. You don’t need anyone’s forgiveness." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Andrea: Don’t listen to her, Kheila! You’re doing the right thing." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- PLAYER DIALOGUE (CYAN) ---
-        System.out.println(ConsoleColors.CYAN + player.name + ": Andrea’s right, Kheila. But will you be alright when facing Erika? If that Babaylan is to be believed, it appears the two of you were close." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + player.name + ": Will you be alright when facing Erika?" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.GREEN + "Kheila: We used to be the best of friends. But I’ll be alright. I can’t let Erika continue down this road." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Kheila: Yes. We used to be the best of friends, but I can’t let Erika continue down this road." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- PLAYER DIALOGUE (CYAN) ---
-        System.out.println(ConsoleColors.CYAN + player.name + ": We better brace ourselves. She’ll be behind this room." + ConsoleColors.RESET);
+        /*System.out.println(ConsoleColors.CYAN + player.name + ": We better brace ourselves. She’ll be behind this room." + ConsoleColors.RESET);
+        sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK); */
+
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+        System.out.println("Opening the door, you see Erika in the middle of the room, surrounded by herbs and the ingredients for a ritual.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("Your grip tightens on the sword. Andrea exchanges weighted stares with you and Kheila before opening the door.");
+        System.out.println(ConsoleColors.GREEN + "Kheila: Erika, stop! You were supposed to protect the balance, not destroy it!" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println("There, you see Erika in the middle of the room, surrounded by herbs and the ingredients for a ritual.");
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
-        System.out.println(ConsoleColors.GREEN + "Kheila: She’s casting the spell! Erika! You must stop this madness." + ConsoleColors.RESET);
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println("Kheila's shout catches her attention, and Erika looks up, her eyes burning with divine fury.");
+        /*System.out.println("Erika looks up, her eyes burning with divine fury.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
@@ -98,12 +96,12 @@ public class W3Mission4 {
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.GREEN + "Kheila: You betrayed our kin! You were supposed to protect the balance, not destroy it!" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Kheila: Erika, stop! You were supposed to protect the balance, not destroy it!" + ConsoleColors.RESET);
         sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
+        MusicPlayer.playSFX(MusicPlayer.CLICK); */
 
         // --- ERIKA DIALOGUE (RED) ---
-        System.out.println(ConsoleColors.RED + "Erika: Balance? Do you still believe in that? The humans promised us liberation. A world where we’re no longer scorned, no longer hidden!" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.RED + "Erika: Balance? The humans promised us liberation. A world where we’re no longer scorned, no longer hidden!" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
@@ -112,16 +110,8 @@ public class W3Mission4 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("Erika lets out a bitter howl of laughter at that question.");
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
         // --- ERIKA DIALOGUE (RED) ---
         System.out.println(ConsoleColors.RED + "Erika: You think they lied? They offered us power. A chance to rule beside them!" + ConsoleColors.RESET);
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
-        System.out.println("The ground shakes. The symbols on the walls shift from blue to a blood-red hue.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
@@ -183,29 +173,35 @@ public class W3Mission4 {
         System.out.println("The Blade of Bulan glows fiercely, resonating with your heart. You strike, each blow cutting through layers of darkness.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        System.out.println("As Erika collapses, the corruption begins to peel away. Her voice trembles.");
+        System.out.println("At last, Erika collapses. The corruption fades, revealing the woman beneath.\n" +
+                "\n" +
+                "Her eyes find Kheila.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- ERIKA DIALOGUE (RED) ---
-        System.out.println(ConsoleColors.RED + "Erika: I… was supposed to rule everything…" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.RED + "Erika: Kheila..." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("Her body turns to silver dust, scattering into the air like moonlight.");
+        System.out.println("Kheila kneels beside her and takes her hand.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("A sudden voice echoes from above. Cold, mechanical, and human.");
+        System.out.println(ConsoleColors.RED + "Erika: I only wanted for us... to stop hiding..." + ConsoleColors.RESET);
+        sc.nextLine();
+        MusicPlayer.playSFX(MusicPlayer.CLICK);
+
+        System.out.println("A sudden voice echoes from a device nearby. Cold, mechanical, and human.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.BOLD_RED + "???: The operation is complete. Terminate all surviving Babaylans and invading mythical creatures. Begin Phase Two." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.BOLD_RED + "???: Subject Erika has fallen. Withdraw all remaining forces." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("The runes flare. From the walls emerge armored silhouettes. Human soldiers wielding weapons that glow with stolen magic.");
+        /*System.out.println("The runes flare. From the walls emerge armored silhouettes. Human soldiers wielding weapons that glow with stolen magic.");
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
@@ -221,23 +217,25 @@ public class W3Mission4 {
         System.out.println("After defeating the last of the wretched human soldiers, Kheila sways on weak legs and falls to her knees\n" +
                 "on the ground, tears running like a violent downpour from her eyes.");
         sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
+        MusicPlayer.playSFX(MusicPlayer.CLICK); */
 
         // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.GREEN + "Kheila: The humans played us all. The Babaylans, the creatures of Mogul, even the goddess’s light." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Kheila: The humans manipulated everything." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println(ConsoleColors.GREEN + "Andrea: Then our war isn’t over. We stopped the Mistress, but the real enemy is still out there." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Andrea: And Erika paid the price for it." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
         // --- PLAYER DIALOGUE (CYAN) ---
-        System.out.println(ConsoleColors.CYAN + player.name + ": Then we fight them next. For Mogul. For Biringan. For all of us." + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + player.name + ": We should go, guys. We have work to do." + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        System.out.println("The Sanctum crumbles. The moonlight above dims and is soon replaced by the red glow of human war machines rising over the horizon.");
+        System.out.println("The Sanctum begins to collapse. You, Andrea, and Kheila escape just as the ruins cave in behind you. \n" +
+                "In the distance, you see the shimmering metropolis of Biringan City as dawn washes over it.\n" +
+                "For the first time in what feels like an eternity, everything is quiet.");
         DialogueUtils.pause();
 
         return true;
