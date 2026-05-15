@@ -3,10 +3,10 @@ package Display;
 public class DisplayUtils {
     public static void printCriticalBanner() {
 
-        System.out.println(ConsoleColors.YELLOW + "      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ");
+        System.out.println(ConsoleColors.YELLOW + "      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ");
         System.out.println("      █▀▀ █▀█ █ ▀█▀ █ █▀▀ ▄▀█ █░░ █ █");
         System.out.println("      █▄▄ █▀▄ █ ░█░ █ █▄▄ █▀█ █▄▄ ▄ ▄");
-        System.out.println("      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ " + ConsoleColors.RESET);
+        System.out.println("      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★  " + ConsoleColors.RESET);
 
     }
 
