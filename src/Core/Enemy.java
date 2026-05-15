@@ -1,12 +1,12 @@
 package Core;
 
-import java.util.Random;
 import Audio.MusicPlayer;
 import Display.ConsoleColors;
 
 public class Enemy {
     public String name;
     public int hp;
+    public int maxHp;
     public int defense; // Remove 'final' to allow modifiers
     public final EnemyType type;
     public EnemyAffix affix;
@@ -15,6 +15,7 @@ public class Enemy {
         this.type = type;
         this.affix = affix;
         this.name = affix == EnemyAffix.NORMAL ? name : affix.label + " " + name;
+        this.maxHp = hp + affix.hpMod;
         this.hp = hp + affix.hpMod;
         this.defense = 3 + affix.defMod; // Base defense
     }
