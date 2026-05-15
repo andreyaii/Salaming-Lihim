@@ -9,4 +9,12 @@ public class DisplayUtils {
         System.out.println("      ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ");
         System.out.println("\u001B[0m");
     }
+
+    public static void type(String message, int delay) {
+        for (char c : message.toCharArray()) {
+            System.out.print(c);
+            try { Thread.sleep(delay); } catch (InterruptedException e) {}
+        }
+        System.out.println();
+    }
 }

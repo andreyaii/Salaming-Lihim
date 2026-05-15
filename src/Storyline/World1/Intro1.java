@@ -1,6 +1,7 @@
 package Storyline.World1;
 
 import Display.ConsoleColors;
+import Display.DisplayUtils;
 import Storyline.DialogueUtils;
 import Core.PlayerCharacter;
 import Audio.MusicPlayer;
@@ -34,7 +35,13 @@ public class Intro1 {
         System.out.println("   ║                                                                                                                                                       ║ ");
         System.out.println("   ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝ \n" + ConsoleColors.RESET);
         DialogueUtils.pause();
-        System.out.println("A city filled with glittering riches beyond compare that shines like a beacon for all the darkest creatures of the night.\n" +
+        DisplayUtils.type("A city filled with glittering riches that shines like a beacon for all the darkest creatures of the night.", 15);
+        DisplayUtils.type("But a different breed of darkness has been brewing in Biringan lately.", 15);
+        DisplayUtils.type("With this in mind, you set out to look for clues in the most populated area of town, the marketplace.\n", 15);
+        DisplayUtils.type("Your feet carry you through the crowded streets, and you sigh in relief when you reach a less crowded area.", 15);
+        DisplayUtils.type("But just as you stop to relax, you hear a scream.", 15);
+/*
+        System.out.println("\nA city filled with glittering riches beyond compare that shines like a beacon for all the darkest creatures of the night.\n" +
                 "But lately, you find that traces of a different breed of darkness have been popping up in various areas of your beloved Biringan.\n" +
                 "With this in mind, you set out to look for clues and follow the trail left behind by the ones threatening to devour the light \n" +
                 "of the city. You roam about the place and decide to start your search in the most well-populated area of town, the marketplace.\n");
@@ -42,7 +49,7 @@ public class Intro1 {
         System.out.println("Your feet carry you through the crowded streets, expertly maneuvering between the merchants bustling about with their wares.\n" +
                 "You breathe a sigh of relief after you reach a less populated area.\n" +
                 "But just as you stop to relax, you hear a scream.");
-        System.out.println();
+        System.out.println(); */
         DialogueUtils.pause();
     }
 }
