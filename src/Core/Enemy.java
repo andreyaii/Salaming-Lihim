@@ -33,7 +33,7 @@ public class Enemy {
 
         int netDamage = Math.max(1, rawDamage - target.getDefense()); //
         target.modifyHp(netDamage); //
-        System.out.println("Deals " + netDamage + " damage to " + target.name + "!"); //
+        System.out.println(ConsoleColors.RED + "Deals " + netDamage + " damage to " + target.name + "!" + ConsoleColors.RESET); //
         return netDamage;
     }
 }

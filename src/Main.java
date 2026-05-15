@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
         Opening.opening();
         PlayerCharacter player = PlayerSelection.createPlayer();
-
         // ── World 1 ───
         Intro1.intro1(player);
         if (!W1Mission1.mission1(player)) return;

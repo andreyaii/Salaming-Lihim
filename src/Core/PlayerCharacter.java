@@ -223,9 +223,6 @@ public class PlayerCharacter {
         return defense;
     }
 
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
 
     public void buyArmor() {
         armorLevel++;
@@ -241,10 +238,6 @@ public class PlayerCharacter {
         }
         defense += addedDefense;
         System.out.println("                                             ️🛡️ Armor upgraded! Defense +" + addedDefense + " (Total Defense: " + defense + ")\n");
-    }
-
-    public int getArmorLevel() {
-        return armorLevel;
     }
 
     public void rest() {
@@ -266,7 +259,7 @@ public class PlayerCharacter {
 
     public void levelUp() {
         level++;
-        maxHp = (int) Math.round(maxHp * Math.pow(1.10, 1));
+        maxHp = (int) Math.round(maxHp * Math.pow(1.05, 1)); // CHANGED FROM 1.10
         hp = maxHp;
         mana = maxMana = (int) Math.round(maxMana * Math.pow(1.10, 1));
     }

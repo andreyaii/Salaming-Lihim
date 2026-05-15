@@ -30,8 +30,6 @@ public class MusicPlayer {
     public static final String SFX_HEAL = "SFX - HEAL.wav";
     public static final String SFX_MANA = "SFX - MANA.wav";
     public static final String SFX_DUWENDE = "SFX - Goblin Throw.wav";
-    public static final String SFX_DUWENDE_DEATH = "SFX - Duwende Death.wav";
-    public static final String SFX_TIYANAK = "SFX - Creepy Baby Monster.wav"; // REMOVE KAY CREEPY PAMINAWN
     public static final String SFX_BUNGISNGIS = "SFX - Ogre Smash.wav";
     public static final String SFX_ASWANG = "SFX - Vampire Claw Attack.wav";
     public static final String SFX_SIGBIN = "SFX - Hellhound Bite.wav";

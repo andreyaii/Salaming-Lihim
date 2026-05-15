@@ -14,7 +14,7 @@ public enum EnemyType {
     ABWAK("Abwak", 7, 22, "lunges with claws", MusicPlayer.SFX_ABWAK),
     BABAYLANS("Babaylans", 13, 25, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
     BABAYLANS2("Babaylan Sentinels", 13, 30, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
-    HUMANS("Humans", 10, 67, "fires their gun", MusicPlayer.SFX_HUMAN),
+    // HUMANS("Humans", 10, 67, "fires their gun", MusicPlayer.SFX_HUMAN),
     TRIA("Tria", 20, 50, "throws knives on you", MusicPlayer.SFX_TRIA),
     ERIKA("Erika", 20, 40, "lunges at you", MusicPlayer.SFX_ERIKA),
     ERIKA2("Erika Clones", 15, 20, "scratches you", MusicPlayer.SFX_ERIKA);
