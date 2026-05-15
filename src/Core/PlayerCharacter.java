@@ -118,7 +118,7 @@ public class PlayerCharacter {
     }
 
     public void displayStats() {
-        System.out.println("\n                                                            📜 ════ 𝕮𝖍𝖆𝖗𝖆𝖈𝖙𝖊𝖗 𝕻𝖗𝖊𝖛𝖎𝖊𝖜 ════ 📜");
+        System.out.println(ConsoleColors.YELLOW + "\n                                                            📜 ════ 𝕮𝖍𝖆𝖗𝖆𝖈𝖙𝖊𝖗 𝕻𝖗𝖊𝖛𝖎𝖊𝖜 ════ 📜");
         System.out.printf("                                                           ────────────────────────────────\n");
         System.out.printf("                                                             >> Name      : %s\n", name);
         System.out.printf("                                                             >> Race      : %s\n", race);
@@ -138,7 +138,7 @@ public class PlayerCharacter {
             System.out.println();
         }
         System.out.printf("                                                             >> Barya     : %d\n", barya);
-        System.out.println("                                                           ────────────────────────────────\n");
+        System.out.println("                                                           ────────────────────────────────\n" + ConsoleColors.RESET);
     }
 
     public void addItem(Item item) {

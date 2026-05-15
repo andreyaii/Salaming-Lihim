@@ -1,6 +1,7 @@
 package Storyline;
 
 import Core.*;
+import Display.ConsoleColors;
 import Display.RaceArt;
 import Audio.MusicPlayer;
 

@@ -62,7 +62,7 @@ public class BattleManager {
 
             System.out.println("\n                                                       ┏━PLAYER STATUS───────────────────────────━┓");
             System.out.println("                                                         HP   " + bar(player.getHp(),   player.maxHp,   "█", "░" + ConsoleColors.RESET));
-            System.out.println(ConsoleColors.BLUE + "                                                         Mana " + manaBar(player.getMana(), player.maxMana, "▓", "░"+ ConsoleColors.RESET));
+            System.out.println("                                                         Mana " + ConsoleColors.BLUE + manaBar(player.getMana(), player.maxMana, "▓", "░"+ ConsoleColors.RESET));
             System.out.println(ConsoleColors.RESET + "                                                       ┗━────────────────────────────────────────━┛");
 
             System.out.println("\n👹 ENEMIES");
