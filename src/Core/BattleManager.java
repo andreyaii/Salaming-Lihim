@@ -166,7 +166,7 @@ public class BattleManager {
 
         if (player.isAlive()) {
             MusicPlayer.play(MusicPlayer.WINNER, false); // ← ADDED
-            System.out.println("\n                                             ┏━━━━━━━━━━━━━━━━★★★★★ QUEST COMPLETE ★★★★★━━━━━━━━━━━━━━━━┓");
+            System.out.println(ConsoleColors.YELLOW + "\n                                             ┏━━━━━━━━━━━━━━━━★★★★★ QUEST COMPLETE ★★★★★━━━━━━━━━━━━━━━━┓");
             System.out.println("                                                             [🎉] " + player.name + " defeated all enemies!");
             int reward = isBossBattle ? 100 : 20;
             player.setBarya(player.getBarya() + reward);
@@ -174,7 +174,7 @@ public class BattleManager {
             System.out.println("                                                             [↑] Level Up Achieved! ");
             player.levelUp();
             System.out.println("                                                             [🏦] Total barya: " + player.getBarya());
-            System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
+                    System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" + ConsoleColors.RESET);
         }
         return true;
     }

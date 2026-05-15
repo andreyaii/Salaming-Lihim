@@ -31,18 +31,18 @@ public class BeggarEvent {
             System.out.println("\n\nA faint voice echoes in the darkness...\n");
             sc.nextLine();
 
-            System.out.println(ConsoleColors.GREEN + "??? : Hey... wake up, kid. C’mon, open your eyes.\n");
+            System.out.println(ConsoleColors.GREEN + "??? : Hey... wake up, kid. C’mon, open your eyes.\n" + ConsoleColors.RESET);
             sc.nextLine();
 
             System.out.println("As your vision clears, you recognize the man leaning over you.\n");
             sc.nextLine();
 
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: Heh. Remember me? I'm Sir Khai—");
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: the beggar you helped back at the alley in Biringan City.\n");
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: Heh. Remember me? I'm Sir Khai—" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: the beggar you helped back at the alley in Biringan City.\n" + ConsoleColors.RESET);
             sc.nextLine();
 
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: Didn’t think we'd meet again like this... but good thing I passed by the old bridge.");
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: You were knocked out cold. Lucky I found you before someone else did.\n");
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: Didn’t think we'd meet again like this... but good thing I passed by the old bridge." + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: You were knocked out cold. Lucky I found you before someone else did.\n" + ConsoleColors.RESET);
             sc.nextLine();
 
             introducedBefore = true;
@@ -52,10 +52,10 @@ public class BeggarEvent {
             System.out.println("\n\nYou hear a familiar voice as consciousness returns...\n");
             sc.nextLine();
 
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: Tsk. You again?");
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: Kid, you really gotta stop dying everywhere.\n");
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: Tsk. You again?" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: Kid, you really gotta stop dying everywhere.\n" + ConsoleColors.RESET);
             sc.nextLine();
-            System.out.println(ConsoleColors.GREEN + "Sir Khai: Anyway... I dragged you somewhere safe. Again.\n");
+            System.out.println(ConsoleColors.GREEN + "Sir Khai: Anyway... I dragged you somewhere safe. Again.\n" + ConsoleColors.RESET);
             sc.nextLine();
 
             dialogType = 2;
@@ -71,8 +71,8 @@ public class BeggarEvent {
 
         player.setAlive(true);
 
-        System.out.println(ConsoleColors.GREEN + "\nSir Khai: You dropped some coins, so I kept " + lostBarya + " pesos for ‘finding you’. ");
-        System.out.println(ConsoleColors.GREEN + "Sir Khai: Try not to get yourself killed next time, alright?");
+        System.out.println(ConsoleColors.GREEN + "\nSir Khai: You dropped some coins, so I kept " + lostBarya + " pesos for ‘finding you’. " + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN + "Sir Khai: Try not to get yourself killed next time, alright?" + ConsoleColors.RESET);
         sc.nextLine();
 
         System.out.println("\nYou wake up in a small hut, feeling sore but alive.");
