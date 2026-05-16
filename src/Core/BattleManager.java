@@ -145,8 +145,7 @@ public class BattleManager {
                 if (currentWorld == 1) {
                     MusicPlayer.play(MusicPlayer.GAME_OVER, false);
                     System.out.println("\n☠️ You were defeated in your first mission...");
-                    System.out.println("🔚 GAME OVER");
-                    System.exit(0);
+                    return false;
                 }
 
                 System.out.println("💀 You were defeated...");
@@ -154,8 +153,6 @@ public class BattleManager {
                 if (rescueType == 1) System.out.println("\n✨ Sir Khai has saved you for the first time!");
                 if (rescueType == 2) System.out.println("\n✨ Sir Khai drags your unconscious body to safety again!!");
                 if (rescueType == 0) {
-                    System.out.println("\n☠️ Your journey ends here...");
-                    System.out.println("🔚 Game Over");
                     return false;
                 }
 
