@@ -5,14 +5,20 @@ import Storyline.DialogueUtils;
 public class GameScreens {
 
     public static void displayGameOver() {
-        System.out.println("\n" + ConsoleColors.RED +
-                "                                             ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n" +
-                "                                             ┃                      💀 GAME OVER 💀                             ┃\n" +
-                "                                             ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫\n" +
-                "                                             ┃ Your soul has departed this world... darkness consumes you.      ┃\n" +
-                "                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
-                + ConsoleColors.RESET);
+        System.out.println();
+        System.out.println(ConsoleColors.RED + "                                             ▄████  ▄▄▄       ███▄ ▄███▓▓█████     ▒█████   ██▒   █▓▓█████  ██▀███  ");
+        System.out.println("                                            ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀    ▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒");
+        System.out.println("                                           ▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███      ▒██░  ██▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒");
+        System.out.println("                                           ░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄    ▒██   ██░  ▒██ █░░▒▓█  ▄ ▒██▀▀█▄  ");
+        System.out.println("                                           ░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒████▒   ░ ████▓▒░   ▒▀█░  ░▒████▒░██▓ ▒██▒");
+        System.out.println("                                            ░▒   ▒  ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░   ░ ▒░▒░▒░    ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░");
+        System.out.println("                                             ░   ░   ▒   ▒▒ ░░  ░      ░ ░ ░  ░     ░ ▒ ▒░    ░ ░░   ░ ░  ░  ░▒ ░ ▒░");
+        System.out.println("                                           ░ ░   ░   ░   ▒   ░      ░      ░      ░ ░ ░ ▒       ░░     ░     ░░   ░ ");
+        System.out.println("                                                 ░       ░  ░       ░      ░  ░       ░ ░        ░     ░  ░   ░     ");
+        System.out.println("                                                              ░                                                        ");
         DialogueUtils.pause();
+        System.out.println("                                               Your soul has departed from this world... darkness consumes you." + ConsoleColors.RESET);
+
     }
 
     public static void displayRestartMenu() {
