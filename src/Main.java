@@ -44,7 +44,7 @@ public class Main {
         PlayerCharacter player = PlayerSelection.createPlayer();
 
         // ── World 1 ───
-        /*Intro1.intro1(player);
+        Intro1.intro1(player);
         if (!W1Mission1.mission1(player)) return false;
         W1Mission2.mission2(player);
         Shop.enterShop(player);
@@ -74,7 +74,7 @@ public class Main {
         W3Mission3.w3mission5(player);
         Shop.enterShop(player);
 
-        if (!W3Mission4.w3mission4(player)) return false;*/
+        if (!W3Mission4.w3mission4(player)) return false;
 
         Ending.ending();
         return true; // Player successfully reached the end!
