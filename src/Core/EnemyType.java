@@ -4,8 +4,8 @@ import Audio.MusicPlayer;
 
 public enum EnemyType {
 
-    DUWENDE("Duwende", 6, 15, "throws a tiny rock", MusicPlayer.SFX_DUWENDE),
-    TIYANAK("Tiyanak", 7, 16, "bites viciously", MusicPlayer.SFX_DUWENDE),
+    DUWENDE("Duwende", 7, 11, "throws a tiny rock", MusicPlayer.SFX_DUWENDE),
+    TIYANAK("Tiyanak", 8, 12, "bites viciously", MusicPlayer.SFX_DUWENDE),
     BUNGISNGIS("Bungisngis", 12, 32, "swings a large tree branch", MusicPlayer.SFX_BUNGISNGIS),
     BUNGISNGIS2("Bungisngis", 8, 29, "swings arm at you", MusicPlayer.SFX_BUNGISNGIS),
     ASWANG("Aswang", 9, 20, "slashes with claws", MusicPlayer.SFX_ASWANG),

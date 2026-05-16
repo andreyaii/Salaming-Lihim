@@ -157,6 +157,7 @@ public class BattleManager {
                 }
 
                 MusicPlayer.play(MusicPlayer.BATTLE, true); // ← ADDED: resume after rescue
+
                 continue;
             }
         }

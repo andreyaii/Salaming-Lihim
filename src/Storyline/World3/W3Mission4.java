@@ -33,10 +33,10 @@ public class W3Mission4 {
         // --- ENCOUNTER (YELLOW) ---
         System.out.println(ConsoleColors.YELLOW + "[You have encountered 8 Babaylans. Please choose a target and an attack.]" + ConsoleColors.RESET);
 
-        List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.ERIKA, 1);
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.ERIKA2, 2);
-        //List<Enemy> enemies1 = EnemyFactory.spawnEnemies(EnemyType.HUMANS, 2);
-        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 3);
+        List<Enemy> bosses = EnemyFactory.spawnBosses(player,EnemyType.ERIKA, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.ERIKA2, 2);
+        //List<Enemy> enemies1 = EnemyFactory.spawnEnemies(player,EnemyType.HUMANS, 2);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies2, 3, true);
 

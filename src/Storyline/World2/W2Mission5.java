@@ -83,10 +83,10 @@ public class W2Mission5 {
         System.out.println();
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIKTIK, 2);
-        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.ABWAK, 2);
-        List<Enemy> enemies3 = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
-        List<Enemy> bosses = EnemyFactory.spawnBosses(EnemyType.TRIA, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.TIKTIK, 2);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(player,EnemyType.ABWAK, 2);
+        List<Enemy> enemies3 = EnemyFactory.spawnEnemies(player,EnemyType.ASWANG, 2);
+        List<Enemy> bosses = EnemyFactory.spawnBosses(player,EnemyType.TRIA, 1);
         BattleManager battle = new BattleManager();
 
         boolean survived = battle.startBattle(player, enemies, 2, false);

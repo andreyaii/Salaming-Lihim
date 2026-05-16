@@ -259,7 +259,7 @@ public class PlayerCharacter {
 
     public void levelUp() {
         level++;
-        maxHp = (int) Math.round(maxHp * Math.pow(1.05, 1)); // CHANGED FROM 1.10
+        maxHp = (int) Math.round(maxHp * Math.pow(1.07, 1)); // CHANGED FROM 1.10
         hp = maxHp;
         mana = maxMana = (int) Math.round(maxMana * Math.pow(1.10, 1));
     }

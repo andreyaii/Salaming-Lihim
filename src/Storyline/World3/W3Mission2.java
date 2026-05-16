@@ -41,7 +41,7 @@ public class W3Mission2 {
         // --- ENCOUNTER (YELLOW) ---
         System.out.println(ConsoleColors.YELLOW + "[You encountered 2 Babaylan Sentinels. Please choose a target and an attack.]" + ConsoleColors.RESET);
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS2, 2);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS2, 2);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 3, false);
         if (!survived) {

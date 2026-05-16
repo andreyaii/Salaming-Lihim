@@ -64,7 +64,7 @@ public class W3Mission1 {
         // --- ENCOUNTER (YELLOW) ---
         System.out.println(ConsoleColors.YELLOW + "[You have encountered 3 Tiyanaks. Please choose a target and an attack]" + ConsoleColors.RESET);
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIYANAK, 3);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.TIYANAK, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 3, false);
         if (!survived) return false;
@@ -185,7 +185,7 @@ public class W3Mission1 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        List<Enemy> babaylans = EnemyFactory.spawnEnemies(EnemyType.BABAYLANS, 2);
+        List<Enemy> babaylans = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS, 2);
         BattleManager battle2 = new BattleManager();
         boolean babaylanSurvived = battle2.startBattle(player, babaylans, 3, false);
         if (!babaylanSurvived) return false;

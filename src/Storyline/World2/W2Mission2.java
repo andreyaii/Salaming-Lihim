@@ -81,7 +81,7 @@ public class W2Mission2 {
         System.out.println("The Aswang snarls, wings unfurling with a crack of sinew. It takes to the sky and the shadows unnaturally bend around its sinister form.");
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.ASWANG, 2);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.ASWANG, 2);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 2, false);
 

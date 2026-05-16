@@ -34,7 +34,7 @@ public class W1Mission1 {
         System.out.println();
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.DUWENDE, 3);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.DUWENDE, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 1, false);
 

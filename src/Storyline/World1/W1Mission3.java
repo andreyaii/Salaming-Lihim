@@ -59,8 +59,8 @@ public class W1Mission3 {
         System.out.println("                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(EnemyType.TIYANAK, 3);
-        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(EnemyType.BUNGISNGIS, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player, EnemyType.TIYANAK, 3);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(player, EnemyType.BUNGISNGIS, 1);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 1, false);
 
