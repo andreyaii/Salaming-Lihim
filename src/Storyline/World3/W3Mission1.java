@@ -15,7 +15,7 @@ public class W3Mission1 {
         System.out.println();
 
         // --- WORLD TITLE CARD (RED) ---
-        System.out.println(ConsoleColors.BOLD_BLUE + "         =================================================================WORLD 3=======================================================================");
+        System.out.println(ConsoleColors.BOLD_BLUE + "         =================================================================WORLD 3====================================================================");
         System.out.println("         ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀█░░░░░░░░░░█░█░█▀█░█▀█░█░█░▀█▀░█▀█░█▀▀░░░▀█▀░█░█░█▀▀░░░█▄█░█▀█░█░█░█▀█░▀█▀░█▀█░▀█▀░█▀█░░░░░░▄▀░░▄▀");
         System.out.println("         ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░█░░░▀░░░░░░█▀▄░█░█░█░█░█▄█░░█░░█░█░█░█░░░░█░░█▀█░█▀▀░░░█░█░█░█░█░█░█░█░░█░░█▀█░░█░░█░█░░░░░▀▄░░▀▄░");
         System.out.println("         ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░░▀░░▀░▀░▀▀▀░▀░▀░░░░░░░▀░░░▀");
@@ -141,6 +141,8 @@ public class W3Mission1 {
 
         System.out.println(ConsoleColors.RED + "Commander: Tighten her bonds! The Mistress will be pleased once we drag this traitor back to the altar." + ConsoleColors.RESET);
 
+        int approachChoice = 0;
+
         while (true) {
             try {
                 // --- SYSTEM CHOICE BOX (YELLOW) ---
@@ -152,14 +154,14 @@ public class W3Mission1 {
                 System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
                 System.out.print(ConsoleColors.MAGENTA + "                                                              Enter your choice: " + ConsoleColors.RESET);
 
-                int choice = sc.nextInt();
+                approachChoice = sc.nextInt();
                 sc.nextLine();
                 MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-                if (choice == 1) {
+                if (approachChoice == 1) {
                     System.out.println("You throw a stone to the far side of the camp. A few Babaylans turn to investigate the noise. Andrea slips through the shadows toward Kheila, cutting the ropes binding her wrists.");
                     break;
-                } else if (choice == 2) {
+                } else if (approachChoice == 2) {
                     System.out.println("You and Andrea move in silently, striking fast. The nearest Babaylan falls before he can even shout. Kheila's eyes widen in shock as Andrea slices through her bindings.");
                     break;
                 } else {
@@ -176,7 +178,7 @@ public class W3Mission1 {
             }
         }
 
-        System.out.println(ConsoleColors.RED + "Commander: Intruders! Stop them!" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.RED + "\nCommander: Intruders! Stop them!" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
@@ -185,10 +187,13 @@ public class W3Mission1 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        List<Enemy> babaylans = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS, 2);
+        List<Enemy> babaylans = EnemyFactory.spawnEnemies(player, EnemyType.BABAYLANS,2);
         BattleManager battle2 = new BattleManager();
-        boolean babaylanSurvived = battle2.startBattle(player, babaylans, 3, false);
+
+        // This explicitly triggers the 5-parameter overloaded method
+        boolean babaylanSurvived = battle2.startBattle(player, babaylans, 3, false, approachChoice);
         if (!babaylanSurvived) return false;
+
         player.resetCooldowns();
 
         System.out.println("You and Andrea finish off the last of the enemies. The remaining Babaylans scatter into the forest.");
