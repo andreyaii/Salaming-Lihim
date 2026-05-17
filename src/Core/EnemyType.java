@@ -12,9 +12,10 @@ public enum EnemyType {
     SIGBIN("Sigbin", 7, 22, "lunges with shadow fangs", MusicPlayer.SFX_SIGBIN),
     TIKTIK("Tiktik", 8, 22, "whips their tongue at you", MusicPlayer.SFX_TIKTIK),
     ABWAK("Abwak", 7, 22, "lunges with claws", MusicPlayer.SFX_ABWAK),
-    BABAYLANS("Babaylans", 13, 22, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
-    BABAYLANS2("Babaylan Sentinels", 11, 30, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
-    TRIA("Tria", 20, 45, "throws knives on you", MusicPlayer.SFX_TRIA),
+    BABAYLANS("Babaylans", 13, 25, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
+    BABAYLANS2("Babaylan Sentinels", 13, 30, "casts a curse on you", MusicPlayer.SFX_BABAYLAN),
+    // HUMANS("Humans", 10, 67, "fires their gun", MusicPlayer.SFX_HUMAN),
+    TRIA("Tria", 20, 50, "throws knives on you", MusicPlayer.SFX_TRIA),
     ERIKA("Erika", 20, 40, "lunges at you", MusicPlayer.SFX_ERIKA),
     ERIKA2("Erika Clones", 15, 20, "scratches you", MusicPlayer.SFX_ERIKA);
 
