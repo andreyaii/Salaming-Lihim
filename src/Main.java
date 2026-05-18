@@ -37,12 +37,10 @@ public class Main {
         }
     }
 
-
-
     public static boolean runGameSession() {
         Opening.opening();
         PlayerCharacter player = PlayerSelection.createPlayer();
-/*
+
         // ── World 1 ───
         Intro1.intro1(player);
         if (!W1Mission1.mission1(player)) return false;
@@ -66,7 +64,8 @@ public class Main {
         Shop.enterShop(player);
 
         // ── World 3 ────
-        Intro3.intro3(); */
+        Intro3.intro3();
+
         if (!W3Mission1.w3mission1(player)) return false;
         Shop.enterShop(player);
         if (!W3Mission2.w3mission2(player)) return false;
