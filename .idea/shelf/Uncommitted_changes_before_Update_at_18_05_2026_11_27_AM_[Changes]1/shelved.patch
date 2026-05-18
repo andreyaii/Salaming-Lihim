@@ -1,0 +1,95 @@
+Index: src/Storyline/World3/W3Mission2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Storyline.World3;\r\n\r\nimport Audio.MusicPlayer;\r\nimport Core.*;\r\nimport Display.ConsoleColors;\r\nimport Storyline.DialogueUtils;\r\n\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class W3Mission2 {\r\n    public static boolean w3mission2(PlayerCharacter player) {\r\n        Scanner sc = new Scanner(System.in);\r\n\r\n        System.out.println();\r\n        // --- WORLD TITLE CARD (RED) ---\r\n        System.out.println(ConsoleColors.BOLD_BLUE + \"  ============================================================================================================================================================\");\r\n        System.out.println(\"  ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀▀▄░░░░░░░▀█▀░█░█░█▀▀░░░█▀▄░█░█░▀█▀░█▀█░█▀▀░░░█▀█░█▀▀░░░█▀▄░█▀█░█▀█░█░█░█▀█░░░░░█▀█░█▀█░░░█▀▄░█▀█░█▀█░█▀█░░░░▄▀░░▄▀ \");\r\n        System.out.println(\"  ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░▄▀░░░▀░░░░░█░░█▀█░█▀▀░░░█▀▄░█░█░░█░░█░█░▀▀█░░░█░█░█▀▀░░░█▀▄░█▀█░█░█░█▄█░█▀█░▄▄▄░█▀█░█░█░░░█░█░█▀█░█▀█░█░█░░░▀▄░░▀▄░ \");\r\n        System.out.println(\"  ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░▀░░░░░▀▀░░▀░▀░▀░▀░▀░▀░▀░▀░░░░░▀░▀░▀░▀░░░▀▀░░▀░▀░▀░▀░▀░▀░░░░░▀░░░▀ \");\r\n        System.out.println(\"  ============================================================================================================================================================\" + ConsoleColors.RESET);\r\n\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NARRATION (DEFAULT) ---\r\n        System.out.println(\"The three of you follow the guidance of the map as it leads you through ancient ruins until you reach a grand hall where massive moonstone pillars encircle a raised altar.\\nUpon it rests a blade glowing faintly silver: the Blade of Bulan.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- PLAYER DIALOGUE (CYAN) ---\r\n        System.out.println(ConsoleColors.CYAN + player.name + \": There it is. The goddess’s weapon.\" + ConsoleColors.RESET);\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NARRATION (DEFAULT) ---\r\n        System.out.println(\"But before you can move closer, shadows stir at the edges of the chamber and a pair of Babaylan Sentinels emerge.\\nTwisted humanoid figures cloaked in bone charms, their eyes glowing red with witchfire.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- ENCOUNTER (YELLOW) ---\r\n        System.out.println(ConsoleColors.YELLOW + \"[You encountered 2 Babaylan Sentinels. Please choose a target and an attack.]\" + ConsoleColors.RESET);\r\n\r\n        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS2, 2);\r\n        BattleManager battle = new BattleManager();\r\n        boolean survived = battle.startBattle(player, enemies, 3, false);\r\n        if (!survived) {\r\n            return false;\r\n        }\r\n\r\n        player.resetCooldowns();\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NARRATION (DEFAULT) ---\r\n        System.out.println(\"When the last guardian falls, silence returns, broken only by the faint hum of the Blade.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NPC DIALOGUE (GREEN) ---\r\n        System.out.println(ConsoleColors.GREEN + \"Andrea: They were protecting this.\" + ConsoleColors.RESET);\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        System.out.println(ConsoleColors.GREEN + \"Kheila: And for good reason. This is the only weapon that can stand a chance against the Mistress.\" + ConsoleColors.RESET);\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NARRATION (DEFAULT) ---\r\n        System.out.println(\"You step forward. The Blade of Bulan seems to breathe, silver light rippling across its edge.\" +\r\n                \"As your hand touches the hilt, a surge of divine power courses through your arm, searing your veins with radiant energy.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- SYSTEM PROMPT / UNLOCK (YELLOW) ---\r\n        System.out.println(ConsoleColors.YELLOW + \"[New Ability Unlocked – Moonstrike: Channels lunar energy to purify corrupted magic.]\" + ConsoleColors.RESET);\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NARRATION (DEFAULT) ---\r\n        System.out.println(\"The chamber trembles. The moonlight shifts, revealing a hidden compartment beneath the altar.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n        System.out.println(\"You unfurl the ancient parchment. Strange runes and shifting lines mark a region deep within Mt. Kanatuan — the heart of the Babaylan fortress.\");\r\n        sc.nextLine();\r\n        MusicPlayer.playSFX(MusicPlayer.CLICK);\r\n\r\n        // --- NPC DIALOGUE (GREEN) ---\r\n        System.out.println(ConsoleColors.GREEN + \"Kheila: This isn’t a map of Banwa-an Daan. This leads to their most guarded chamber- the Sanctum of Eclipse.\" +\r\n                \"Only the highest-ranked Babaylan is allowed access to it.\\nThis is where we'll find the mistress.\" + ConsoleColors.RESET);\r\n\r\n        DialogueUtils.pause();\r\n\r\n        return true;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Storyline/World3/W3Mission2.java b/src/Storyline/World3/W3Mission2.java
+--- a/src/Storyline/World3/W3Mission2.java	(revision 4239c8ed454a0e80b1de954444b876ce3858a17c)
++++ b/src/Storyline/World3/W3Mission2.java	(date 1778994351122)
+@@ -41,7 +41,7 @@
+         // --- ENCOUNTER (YELLOW) ---
+         System.out.println(ConsoleColors.YELLOW + "[You encountered 2 Babaylan Sentinels. Please choose a target and an attack.]" + ConsoleColors.RESET);
+ 
+-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.BABAYLANS2, 2);
++        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,3, EnemyType.BABAYLANS2, 2);
+         BattleManager battle = new BattleManager();
+         boolean survived = battle.startBattle(player, enemies, 3, false);
+         if (!survived) {
+Index: src/Core/EnemyFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Core;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Random;\r\n\r\npublic class EnemyFactory {\r\n    private static final java.util.Random random = new java.util.Random();\r\n\r\n    public static List<Enemy> spawnEnemies( PlayerCharacter player, EnemyType type, int count\r\n            /*EnemyType type, int count*/) {\r\n        List<Enemy> enemies = new ArrayList<>();\r\n        EnemyAffix[] affixes = EnemyAffix.values();\r\n\r\n        for (int i = 1; i <= count; i++) {\r\n            String baseName = type.typeName;\r\n            int hp = 45 + random.nextInt(10) + ((player.getLevel() - 1) * 2);\r\n            //int hp = 50 + random.nextInt(17); //\r\n\r\n            // 40% chance to have a special affix, otherwise NORMAL\r\n            EnemyAffix selectedAffix = (random.nextInt(100) < 20)\r\n                    ? affixes[random.nextInt(affixes.length)]\r\n                    : EnemyAffix.NORMAL;\r\n\r\n            enemies.add(new Enemy(baseName, type, hp, selectedAffix));\r\n        }\r\n        return enemies;\r\n    }\r\n\r\n    public static List<Enemy> spawnBosses(PlayerCharacter player, EnemyType type, int count/*EnemyType type, int count*/) {\r\n        List<Enemy> bosses = new ArrayList<>();\r\n        for (int i = 1; i <= count; i++) {\r\n            String name = \"Boss \" + type.typeName + \" \" + i; //\r\n            int hp = 100 + new Random().nextInt(30) + ((player.getLevel() - 1) * 5);\r\n            // int hp = 100 + random.nextInt(50); // 100–150 HP\r\n\r\n            // We pass EnemyAffix.ANCIENT to make bosses naturally stronger\r\n            bosses.add(new Enemy(name, type, hp, EnemyAffix.ANCIENT));\r\n        }\r\n        return bosses;\r\n    }\r\n}\r\n\r\n/*\r\npackage Core;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Random;\r\n\r\npublic class EnemyFactory {\r\n\r\n    //spawn normal enemies\r\n    public static List<Enemy> spawnEnemies(EnemyType type, int count) {\r\n        List<Enemy> enemies = new ArrayList<>();\r\n        for (int i = 1; i <= count; i++) {\r\n            String name = type.typeName + \" \" + i;\r\n            int hp = 50 + new Random().nextInt(17); //55-67 hp\r\n            enemies.add(new Enemy(name, type, hp));\r\n        }\r\n        return enemies;\r\n    }\r\n\r\n    //spawn bosses\r\n    public static List<Enemy> spawnBosses(EnemyType type, int count) {\r\n        List<Enemy> bosses = new ArrayList<>();\r\n        for (int i = 1; i <= count; i++) {\r\n            String name = \"Boss \" + type.typeName + \" \" + i;\r\n            int hp = 100 + new Random().nextInt(50); // 100–150 HP\r\n            bosses.add(new Enemy(name, type, hp));\r\n        }\r\n        return bosses;\r\n    }\r\n}\r\n */\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Core/EnemyFactory.java b/src/Core/EnemyFactory.java
+--- a/src/Core/EnemyFactory.java	(revision 4239c8ed454a0e80b1de954444b876ce3858a17c)
++++ b/src/Core/EnemyFactory.java	(date 1778994351211)
+@@ -7,16 +7,25 @@
+ public class EnemyFactory {
+     private static final java.util.Random random = new java.util.Random();
+ 
+-    public static List<Enemy> spawnEnemies( PlayerCharacter player, EnemyType type, int count
++    public static List<Enemy> spawnEnemies( PlayerCharacter player, int currentWorld, EnemyType type, int count
+             /*EnemyType type, int count*/) {
+         List<Enemy> enemies = new ArrayList<>();
+         EnemyAffix[] affixes = EnemyAffix.values();
+ 
+         for (int i = 1; i <= count; i++) {
+             String baseName = type.typeName;
+-            int hp = 45 + random.nextInt(10) + ((player.getLevel() - 1) * 2);
++
++            int baseHp;
++
++            switch (currentWorld) {
++                case 1 -> baseHp = 45;
++                case 2 -> baseHp = 75;
++                case 3 -> baseHp = 115;
++                default -> baseHp = 45;
++            }
++
++            int hp = baseHp + random.nextInt(16) + ((player.getLevel() - 1) * 1);
+             //int hp = 50 + random.nextInt(17); //
+-
+             // 40% chance to have a special affix, otherwise NORMAL
+             EnemyAffix selectedAffix = (random.nextInt(100) < 20)
+                     ? affixes[random.nextInt(affixes.length)]
+@@ -27,9 +36,27 @@
+         return enemies;
+     }
+ 
+-    public static List<Enemy> spawnBosses(PlayerCharacter player, EnemyType type, int count/*EnemyType type, int count*/) {
++    public static List<Enemy> spawnBosses(PlayerCharacter player, int currentWorld, EnemyType type, int count) {
+         List<Enemy> bosses = new ArrayList<>();
++
+         for (int i = 1; i <= count; i++) {
++
++            String name = "Boss " + type.typeName + " " + i;
++
++            int baseHp;
++
++            switch (currentWorld) {
++                case 1 -> baseHp = 120;
++                case 2 -> baseHp = 190;
++                case 3 -> baseHp = 280;
++                default -> baseHp = 120;
++            }
++
++            int hp = baseHp + random.nextInt(31) + ((player.getLevel() - 1) * 2);
++
++            bosses.add(new Enemy(name, type, hp, EnemyAffix.ANCIENT));
++        }
++        /*for (int i = 1; i <= count; i++) {
+             String name = "Boss " + type.typeName + " " + i; //
+             int hp = 100 + new Random().nextInt(30) + ((player.getLevel() - 1) * 5);
+             // int hp = 100 + random.nextInt(50); // 100–150 HP
+@@ -37,6 +64,7 @@
+             // We pass EnemyAffix.ANCIENT to make bosses naturally stronger
+             bosses.add(new Enemy(name, type, hp, EnemyAffix.ANCIENT));
+         }
++         */
+         return bosses;
+     }
+ }

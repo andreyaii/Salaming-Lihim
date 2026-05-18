@@ -66,7 +66,7 @@ public class W2Mission3 {
         System.out.println();
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.SIGBIN, 3);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player, 2,EnemyType.SIGBIN, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 2, false);
 

@@ -25,7 +25,7 @@ public class W2Mission1 {
         System.out.println(ConsoleColors.YELLOW + "You see Andrea heavily injured on the ground, the Bungisngis limping towards her. You rush in to protect her.\n" + ConsoleColors.RESET);
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.BUNGISNGIS2, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,2,EnemyType.BUNGISNGIS2, 1);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 2, false);
 
