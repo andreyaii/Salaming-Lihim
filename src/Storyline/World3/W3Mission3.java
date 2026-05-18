@@ -4,9 +4,7 @@ import Audio.MusicPlayer;
 import Core.*;
 import Display.ConsoleColors;
 import Storyline.DialogueUtils;
-
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class W3Mission3 {

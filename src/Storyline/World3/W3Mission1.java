@@ -4,7 +4,6 @@ import Audio.MusicPlayer;
 import Core.*;
 import Display.ConsoleColors;
 import Storyline.DialogueUtils;
-
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -64,7 +63,7 @@ public class W3Mission1 {
         // --- ENCOUNTER (YELLOW) ---
         System.out.println(ConsoleColors.YELLOW + "[You have encountered 3 Tiyanaks. Please choose a target and an attack]" + ConsoleColors.RESET);
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.TIYANAK, 3);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,3,EnemyType.TIYANAK, 3);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 3, false);
         if (!survived) return false;
@@ -187,7 +186,7 @@ public class W3Mission1 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        List<Enemy> babaylans = EnemyFactory.spawnEnemies(player, EnemyType.BABAYLANS,2);
+        List<Enemy> babaylans = EnemyFactory.spawnEnemies(player,2,  EnemyType.BABAYLANS,2);
         BattleManager battle2 = new BattleManager();
 
         // This explicitly triggers the 5-parameter overloaded method

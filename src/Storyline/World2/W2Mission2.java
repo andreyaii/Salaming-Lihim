@@ -4,7 +4,6 @@ import Audio.MusicPlayer;
 import Core.*;
 import Display.ConsoleColors;
 import Storyline.DialogueUtils;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ public class W2Mission2 {
 
         System.out.println();
         // --- WORLD TITLE CARD (RED) ---
-        System.out.println(ConsoleColors.BOLD_BLUE + "                   =======================================================WORLD 2========================================================");
+        System.out.println(ConsoleColors.BOLD_BLUE + "                   ======================================================================================================================");
         System.out.println("                   ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀▀▄░░░░░░░▀█▀░█▀█░░░█▀▀░█▀█░█░█░█▀▀░░░█▀█░░░█▀▀░█▀▄░▀█▀░█▀▀░█▀█░█▀▄░░░░▄▀░░▄▀");
         System.out.println("                   ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░▄▀░░░▀░░░░░█░░█░█░░░▀▀█░█▀█░▀▄▀░█▀▀░░░█▀█░░░█▀▀░█▀▄░░█░░█▀▀░█░█░█░█░░░▀▄░░▀▄░");
         System.out.println("                   ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░░▀░░░░░▀░░▀▀▀░░░▀▀▀░▀░▀░░▀░░▀▀▀░░░▀░▀░░░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀░░░░░░▀░░░▀");
@@ -81,7 +80,7 @@ public class W2Mission2 {
         System.out.println("The Aswang snarls, wings unfurling with a crack of sinew. It takes to the sky and the shadows unnaturally bend around its sinister form.");
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player,EnemyType.ASWANG, 2);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player, 2, EnemyType.ASWANG, 2);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 2, false);
 
