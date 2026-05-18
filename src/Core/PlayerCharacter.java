@@ -145,17 +145,6 @@ public class PlayerCharacter {
         inventory.add(item);
     }
 
-    public void showInventory() {
-        System.out.println("\n=== 🎒 Inventory ===");
-        if (inventory.isEmpty()) {
-            System.out.println("You have no items.");
-        } else {
-            for (int i = 0; i < inventory.size(); i++) {
-                System.out.println((i + 1) + ". " + inventory.get(i).getName());
-            }
-        }
-    }
-
     public void useItem(Item item) {
         switch (item.getName()) {
             case "Health Potion":

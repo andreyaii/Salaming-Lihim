@@ -24,8 +24,6 @@ public class EnemyFactory {
         }
 
         int hp = baseHp + random.nextInt(16) + ((player.getLevel() - 1) * 1);
-        //int hp = 50 + random.nextInt(17); //
-        // 40% chance to have a special affix, otherwise NORMAL
         EnemyAffix selectedAffix = (random.nextInt(100) < 20)
                 ? affixes[random.nextInt(affixes.length)]
                 : EnemyAffix.NORMAL;
@@ -55,48 +53,7 @@ public class EnemyFactory {
 
             bosses.add(new Enemy(name, type, hp, EnemyAffix.ANCIENT));
         }
-        /*for (int i = 1; i <= count; i++) {
-            String name = "Boss " + type.typeName + " " + i; //
-            int hp = 100 + new Random().nextInt(30) + ((player.getLevel() - 1) * 5);
-            // int hp = 100 + random.nextInt(50); // 100–150 HP
 
-            // We pass EnemyAffix.ANCIENT to make bosses naturally stronger
-            bosses.add(new Enemy(name, type, hp, EnemyAffix.ANCIENT));
-        }
-         */
         return bosses;
     }
 }
-
-/*
-package Core;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-public class EnemyFactory {
-
-    //spawn normal enemies
-    public static List<Enemy> spawnEnemies(EnemyType type, int count) {
-        List<Enemy> enemies = new ArrayList<>();
-        for (int i = 1; i <= count; i++) {
-            String name = type.typeName + " " + i;
-            int hp = 50 + new Random().nextInt(17); //55-67 hp
-            enemies.add(new Enemy(name, type, hp));
-        }
-        return enemies;
-    }
-
-    //spawn bosses
-    public static List<Enemy> spawnBosses(EnemyType type, int count) {
-        List<Enemy> bosses = new ArrayList<>();
-        for (int i = 1; i <= count; i++) {
-            String name = "Boss " + type.typeName + " " + i;
-            int hp = 100 + new Random().nextInt(50); // 100–150 HP
-            bosses.add(new Enemy(name, type, hp));
-        }
-        return bosses;
-    }
-}
- */

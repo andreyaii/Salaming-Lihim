@@ -7,7 +7,7 @@ public class Enemy {
     public String name;
     public int hp;
     public int maxHp;
-    public int defense; // Remove 'final' to allow modifiers
+    public int defense;
     public final EnemyType type;
     public EnemyAffix affix;
 

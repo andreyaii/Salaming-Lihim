@@ -52,15 +52,12 @@ public class BattleManager {
         try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
         MusicPlayer.play(MusicPlayer.BATTLE, true);
 
-//        System.out.println("                                                      ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"); //
-//        System.out.println("                                                      █              \u200b⚔\u200b ️ Battle Begins!             █"); //
-//        System.out.println("                                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"); //
-
         return runBattleCore(player, enemies, currentWorld, isBossBattle);
     }
 
     // Overloaded for special narrative adjustments
     public boolean startBattle(PlayerCharacter player, List<Enemy> enemies, int currentWorld, boolean isBossBattle, int rescueApproach) {
+        MusicPlayer.play(MusicPlayer.BATTLE, true);
         if (rescueApproach == 2) {
             System.out.println("\n\u001B[33m⚡ AMBUSH ADVANTAGE! Your stealth attack catches the Babaylans off guard.\u001B[0m");
             System.out.println("\u001B[33m⚡ All enemies take 8 points of preemptive strike damage!\u001B[0m");
@@ -90,7 +87,7 @@ public class BattleManager {
                 for (int i = 0; i < enemies.size(); i++) {
                     Enemy e = enemies.get(i);
                     System.out.printf("[%d] %-20s  HP %s\n", i, e.name,
-                            bar(e.hp, e.maxHp, "█", "░")); //System.out.printf("[%d] %-20s  HP %s\n", i, e.name,bar(e.hp, 150, "█", "░"));
+                            bar(e.hp, e.maxHp, "█", "░"));
                 }
 
                 int targetIndex;
@@ -178,17 +175,15 @@ public class BattleManager {
                         return false;
                     }
 
-                    MusicPlayer.play(MusicPlayer.BATTLE, true); // ← ADDED: resume after rescue
+                    MusicPlayer.play(MusicPlayer.BATTLE, true);
 
-                    continue;
                 }
             }
 
             if (player.isAlive()) {
-                MusicPlayer.play(MusicPlayer.WINNER, false); // ← ADDED
+                MusicPlayer.play(MusicPlayer.WINNER, false);
                 System.out.println(ConsoleColors.YELLOW + "\n                                             ┏━━━━━━━━━━━━━━━━★★★★★ QUEST COMPLETE ★★★★★━━━━━━━━━━━━━━━━┓");
                 System.out.println("                                                             [🎉] " + player.name + " defeated all enemies!");
-                // int reward = isBossBattle ? 100 : 20;
 
                 Random random = new Random();
                 int reward = isBossBattle
@@ -200,6 +195,11 @@ public class BattleManager {
                 player.levelUp();
                 System.out.println("                                                             [🏦] Total barya: " + player.getBarya());
                 System.out.println("                                             ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n" + ConsoleColors.RESET);
+
+                try { Thread.sleep(2500); } catch (InterruptedException ignored) {}
+
+                MusicPlayer.play(MusicPlayer.ADVENTURE, true);
+
             }
         }
         return true;

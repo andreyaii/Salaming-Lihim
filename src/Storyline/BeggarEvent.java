@@ -63,7 +63,6 @@ public class BeggarEvent {
 
         int lostBarya = Math.min(player.getBarya(), new Random().nextInt(26)); // loses up to 25 pesos
         player.setBarya(player.getBarya() - lostBarya);
-        //player.hp += player.maxHp / 2; //restore hp
         player.setHp(player.maxHp / 2);
         if (player.getHp() > player.maxHp) {
             player.setHp(player.maxHp);// prevent overheal

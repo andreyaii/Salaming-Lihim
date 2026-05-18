@@ -72,10 +72,6 @@ public class W3Mission4 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        // --- PLAYER DIALOGUE (CYAN) ---
-        /*System.out.println(ConsoleColors.CYAN + player.name + ": We better brace ourselves. She’ll be behind this room." + ConsoleColors.RESET);
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK); */
 
         MusicPlayer.playSFX(MusicPlayer.CLICK);
         System.out.println("Opening the door, you see Erika in the middle of the room, surrounded by herbs and the ingredients for a ritual.");
@@ -85,19 +81,6 @@ public class W3Mission4 {
         System.out.println(ConsoleColors.GREEN + "Kheila: Erika, stop! You were supposed to protect the balance, not destroy it!" + ConsoleColors.RESET);
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
-        /*System.out.println("Erika looks up, her eyes burning with divine fury.");
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
-        // --- ERIKA DIALOGUE (RED) ---
-        System.out.println(ConsoleColors.RED + "Erika: So… you’re the Fool wielding the goddess’s toy. Do you even know whose war you’re fighting?" + ConsoleColors.RESET);
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
-        // --- NPC DIALOGUE (GREEN) ---
-        System.out.println(ConsoleColors.GREEN + "Kheila: Erika, stop! You were supposed to protect the balance, not destroy it!" + ConsoleColors.RESET);
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK); */
 
         // --- ERIKA DIALOGUE (RED) ---
         System.out.println(ConsoleColors.RED + "Erika: Balance? The humans promised us liberation. A world where we’re no longer scorned, no longer hidden!" + ConsoleColors.RESET);
@@ -200,23 +183,6 @@ public class W3Mission4 {
         sc.nextLine();
         MusicPlayer.playSFX(MusicPlayer.CLICK);
 
-        /*System.out.println("The runes flare. From the walls emerge armored silhouettes. Human soldiers wielding weapons that glow with stolen magic.");
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK);
-
-        survived = battle.startBattle(player, enemies1, 3, false);
-
-        if (!survived) {
-            return false;
-        }
-
-        player.resetCooldowns();
-        sc.nextLine();
-
-        System.out.println("After defeating the last of the wretched human soldiers, Kheila sways on weak legs and falls to her knees\n" +
-                "on the ground, tears running like a violent downpour from her eyes.");
-        sc.nextLine();
-        MusicPlayer.playSFX(MusicPlayer.CLICK); */
 
         // --- NPC DIALOGUE (GREEN) ---
         System.out.println(ConsoleColors.GREEN + "Kheila: The humans manipulated everything." + ConsoleColors.RESET);

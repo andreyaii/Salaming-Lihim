@@ -194,7 +194,7 @@ public class W3Mission1 {
         if (!babaylanSurvived) return false;
 
         player.resetCooldowns();
-
+        MusicPlayer.play(MusicPlayer.ADVENTURE, true);
         System.out.println("You and Andrea finish off the last of the enemies. The remaining Babaylans scatter into the forest.");
         System.out.println("You kneel beside the rescued woman. She's breathing heavily, clutching at her raw wrists.");
         sc.nextLine();

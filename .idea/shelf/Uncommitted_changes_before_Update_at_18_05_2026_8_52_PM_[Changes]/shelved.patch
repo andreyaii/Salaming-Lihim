@@ -1,0 +1,27 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Core.*;\r\nimport Display.ConsoleColors;\r\nimport Display.GameScreens;\r\nimport Storyline.*;\r\nimport Storyline.World1.*;\r\nimport Storyline.World2.*;\r\nimport Storyline.World3.*;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        while (true) {\r\n            // 1. Run game and get result\r\n            boolean playerWon = runGameSession();\r\n\r\n            // 2. Show result screen\r\n            if(!playerWon) {\r\n                GameScreens.displayGameOver();\r\n            }\r\n\r\n            // 3. Show menu and handle input\r\n            GameScreens.displayRestartMenu();\r\n            String choice = scanner.next();\r\n\r\n            if (choice.equals(\"0\")) {\r\n                System.out.println(ConsoleColors.MAGENTA + \"Thanks for playing! Goodbye.\" + ConsoleColors.RESET);\r\n                break;\r\n            } else if (choice.equals(\"1\")) {\r\n                System.out.println(ConsoleColors.MAGENTA + \"\\n--- RESTARTING ADVENTURE ---\\n\" + ConsoleColors.RESET);\r\n            } else {\r\n                System.out.println(ConsoleColors.MAGENTA + \"Invalid input. Exiting...\" + ConsoleColors.RESET);\r\n                break;\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n\r\n    public static boolean runGameSession() {\r\n        Opening.opening();\r\n        PlayerCharacter player = PlayerSelection.createPlayer();\r\n/*\r\n        // ── World 1 ───\r\n        Intro1.intro1(player);\r\n        if (!W1Mission1.mission1(player)) return false;\r\n        W1Mission2.mission2(player);\r\n        Shop.enterShop(player);\r\n        if (!W1Mission3.mission3(player)) return false;\r\n        Shop.enterShop(player);\r\n\r\n        // ── World 2 ───\r\n        Intro2.intro2();\r\n        if (!W2Mission1.mission1(player)) return false;\r\n        Shop.enterShop(player);\r\n        if (!W2Mission2.w2mission2(player)) return false;\r\n        Shop.enterShop(player);\r\n        if (!W2Mission3.w2mission3(player)) return false;\r\n        Shop.enterShop(player);\r\n\r\n        W2Mission4.w2mission4(player);\r\n        Shop.enterShop(player);\r\n        if (!W2Mission5.w2mission5(player)) return false;\r\n        Shop.enterShop(player);\r\n\r\n        // ── World 3 ────\r\n        Intro3.intro3(); */\r\n        if (!W3Mission1.w3mission1(player)) return false;\r\n        Shop.enterShop(player);\r\n        if (!W3Mission2.w3mission2(player)) return false;\r\n        Shop.enterShop(player);\r\n        W3Mission3.w3mission5(player);\r\n        Shop.enterShop(player);\r\n\r\n        if (!W3Mission4.w3mission4(player)) return false;\r\n\r\n        Ending.ending();\r\n        return true; // Player successfully reached the end!\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 08b3dc5246782073ae224c81f4eb62779ca8c87d)
++++ b/src/Main.java	(date 1779077014439)
+@@ -42,7 +42,6 @@
+     public static boolean runGameSession() {
+         Opening.opening();
+         PlayerCharacter player = PlayerSelection.createPlayer();
+-/*
+         // ── World 1 ───
+         Intro1.intro1(player);
+         if (!W1Mission1.mission1(player)) return false;
+@@ -66,7 +65,7 @@
+         Shop.enterShop(player);
+ 
+         // ── World 3 ────
+-        Intro3.intro3(); */
++        Intro3.intro3();
+         if (!W3Mission1.w3mission1(player)) return false;
+         Shop.enterShop(player);
+         if (!W3Mission2.w3mission2(player)) return false;
