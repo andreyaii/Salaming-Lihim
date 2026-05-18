@@ -4,7 +4,6 @@ import Audio.MusicPlayer;
 import Core.*;
 import Display.ConsoleColors;
 import Storyline.DialogueUtils;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ public class W1Mission3 {
 
         System.out.println();
         // --- WORLD TITLE CARD (RED) ---
-        System.out.println(ConsoleColors.BOLD_BLUE + "          ===============================================================WORLD 1====================================================================");
+        System.out.println(ConsoleColors.BOLD_BLUE + "          ==========================================================================================================================================");
         System.out.println("          ░▀▄░░▀▄░░░░█▄█░▀█▀░█▀▀░█▀▀░▀█▀░█▀█░█▀█░░░▀▀█░░░░░░░▀█▀░█░█░█▀▀░░░█░█░█▀▀░█▀█░█▀▄░▀█▀░░░█▀█░█▀▀░░░█▀▄░█▀█░█▀▄░█░█░█▀█░█▀▀░█▀▀░█▀▀░░░░▄▀░░▄▀\n"
                 + "          ░░▄▀░░▄▀░░░█░█░░█░░▀▀█░▀▀█░░█░░█░█░█░█░░░░▀▄░░▀░░░░░█░░█▀█░█▀▀░░░█▀█░█▀▀░█▀█░█▀▄░░█░░░░█░█░█▀▀░░░█░█░█▀█░█▀▄░█▀▄░█░█░█▀▀░▀▀█░▀▀█░░░▀▄░░▀▄\n"
                 + "          ░▀░░░▀░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀░░░▀░░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░░░▀▀▀░▀░░░░░▀▀░░▀░▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░░░▀░░░▀");
@@ -59,8 +58,8 @@ public class W1Mission3 {
         System.out.println("                                      ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
         DialogueUtils.pause();
 
-        List<Enemy> enemies = EnemyFactory.spawnEnemies(player, EnemyType.TIYANAK, 3);
-        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(player, EnemyType.BUNGISNGIS, 1);
+        List<Enemy> enemies = EnemyFactory.spawnEnemies(player, 1, EnemyType.TIYANAK, 3);
+        List<Enemy> enemies2 = EnemyFactory.spawnEnemies(player, 1, EnemyType.BUNGISNGIS, 1);
         BattleManager battle = new BattleManager();
         boolean survived = battle.startBattle(player, enemies, 1, false);
 
