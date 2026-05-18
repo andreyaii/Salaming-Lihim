@@ -26,4 +26,5 @@ public abstract class Race {
     public int getSkillCooldown()   { return 3; } // increased from 2
     public int getSpecialCooldown() { return 4; } // increased from 3
 
+    public abstract void displayArt();
 }

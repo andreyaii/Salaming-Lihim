@@ -94,9 +94,9 @@ public class W1Mission3 {
         scan.nextLine();
 
         // --- WORLD TRANSITION (YELLOW BOX) ---
-        System.out.println(ConsoleColors.YELLOW + "          ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-        System.out.println("          ┃            [ You have entered Mogul, the land of the Aswangs ]                  ┃");
-        System.out.println("          ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW + "                                    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.println("                                    ┃            [ You have entered Mogul, the land of the Aswangs ]                  ┃");
+        System.out.println("                                    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛" + ConsoleColors.RESET);
         DialogueUtils.pause();
 
         return true;
